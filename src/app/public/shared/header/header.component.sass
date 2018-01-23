@@ -1,0 +1,33 @@
+@import "~assets/variables"
+
+header
+  display: flex
+  align-items: baseline
+  background-color: $blue
+
+  .icon-title-container
+    display: inline-flex
+    align-items: center
+    width: 70%
+    .icon-img
+        height: 5em
+        margin: 1em
+        border-radius: 50%
+        border: 2px solid $orange
+    .icon-title
+      .icon-title-username
+        font-size: 2em
+        margin-left: .5em
+        font-family: $header-font
+      .icon-title-aspiration
+        font-family: $subtext-font
+
+  nav
+    margin-left: auto
+    ul
+      li
+        font-size: .8em
+        font-family: $navigation-font
+        display: inline-block
+        padding: 0 1em
+        color: $orange

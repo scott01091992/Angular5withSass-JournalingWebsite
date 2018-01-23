@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JournalRecentComponent implements OnInit {
 
+  entries = [
+    {title: "Entry Title", date: "Entry Date"},
+    {title: "Entry Title", date: "Entry Date"},
+    {title: "Entry Title", date: "Entry Date"},
+    {title: "", date: ""},
+    {title: "", date: ""},
+    {title: "", date: ""},
+    {title: "", date: ""},
+    {title: "", date: ""}
+  ];
+
   constructor() { }
 
   ngOnInit() {

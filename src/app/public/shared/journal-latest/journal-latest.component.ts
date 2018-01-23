@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JournalLatestComponent implements OnInit {
 
+
+
   constructor() { }
 
   ngOnInit() {

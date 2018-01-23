@@ -1,3 +1,11 @@
-<p>
-  journal-recent works!
-</p>
+<div class="journal-recent">
+  <h1 class='journal-recent-header'>Recent Entries</h1>
+  <div class='journal-recent-entries'>
+    <ul>
+      <li *ngFor="let entry of entries">
+        <span class='entry-title'>{{entry.title}}</span>
+        <span class='entry-date'>{{entry.date}}</span>
+      </li>
+    </ul>
+  </div>
+</div>

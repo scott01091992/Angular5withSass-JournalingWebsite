@@ -1,9 +1,15 @@
 <app-header></app-header>
-<app-footer></app-footer>
-<app-journal-latest></app-journal-latest>
-<app-journal-recent></app-journal-recent>
-<app-objectives></app-objectives>
-<app-review-latest></app-review-latest>
-<app-review-recent></app-review-recent>
-<app-timeline></app-timeline>
+<div class='journal-content-container'>
+  <app-journal-latest class="journal-latest-box"></app-journal-latest>
+  <app-journal-recent  class="journal-recent-box"></app-journal-recent>
+</div>
+<div class='profile-content-container'>
+  <app-timeline></app-timeline>
+  <app-objectives></app-objectives>
+</div>
+<div class='review-content-container'>
+  <app-review-latest></app-review-latest>
+  <app-review-recent></app-review-recent>
+</div>
 <app-videofeed></app-videofeed>
+<app-footer></app-footer>
