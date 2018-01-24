@@ -1,18 +1,27 @@
 @import "~assets/variables"
 
 .journal-content-container
-  width: 100vw
-  height: 35em
   background-color: $white
-  border-bottom: 1px solid black
+  border-bottom: 1px solid $blackRGBA
   display: flex
-  align-items: stretch
-  flex-direction: row
+  padding: 2em
 
   .journal-recent-box
-    flex-grow: 2
-    padding: 1em 2em 1em .5em
+    padding: 1em 1em 1em .5em
 
   .journal-latest-box
-    flex-grow: 5
     padding: 1em .5em 1em 1em
+    flex-grow: 1
+
+.profile-content-container
+  background-color: $white
+  border-bottom: 1px solid $blackRGBA
+  display: flex
+  padding: 2em
+
+  .profile-timeline-box
+    padding: 1em .5em 1em 1em
+    flex-grow: 1
+
+  .profile-objectives-box
+    padding: 1em 1em 1em .5em

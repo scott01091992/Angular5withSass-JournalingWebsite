@@ -1,0 +1,60 @@
+@import "~assets/variables"
+
+.profile-timeline
+
+  .profile-timeline-header
+    font-family: $subheader-font
+    font-size: 1.5em
+    margin: 0
+    text-align: center
+
+  .profile-timeline-timeline
+    padding: 2em
+    background-color: $blueRGBA
+    font-family: $list-font
+
+    .timeline
+      display: flex
+      flex-direction: column
+
+      .timeline-row
+        display: flex
+        flex-direction: row
+        height: 2em
+        position: relative
+
+        .happiness-level
+          position: absolute
+          top: 25%
+          left: 1%
+
+        .timeline-grid
+          display: inline-block
+          flex-grow: 1
+          border-top: 1px solid $blackRGBA
+          position: relative
+
+          .data-point
+            height: .8em
+            width: .8em
+            border-radius: 50%
+            background-color: $black
+            top: 30%
+            left: 25%
+            position: absolute
+
+      .date-row
+        display: flex
+        flex-direction: row
+        height: 2em
+
+        .timeline-grid
+          display: inline-block
+          flex-grow: 1
+          border-top: 1px solid $blackRGBA
+          position: relative
+
+          .timeline-date
+              position: absolute
+              top: 25%
+              left: 1%

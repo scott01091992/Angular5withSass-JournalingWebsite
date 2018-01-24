@@ -1,5 +1,8 @@
 @import "~assets/variables"
 
+.content-bolden
+  font-family: $journal-content-bold
+
 .journal-latest
 
   .journal-latest-header
@@ -10,5 +13,36 @@
 
   .journal-latest-entry
     background-color: $tan
-    height: 100%
-    width: 100%
+    padding: 2em
+
+    .journal-latest-head
+      h2
+        margin: 0
+        font-family: $journal-title-font
+        display: inline-block
+      h3
+        margin: 0
+        font-family: $journal-title-font
+        display: inline-block
+        float: right
+
+    .journal-latest-content
+      font-family: $journal-content-font
+      p
+        text-indent: 4em
+      .journal-latest-details
+        .journal-latest-goals
+          display: block
+        .journal-latest-happiness
+          display: block
+        .journal-latest-thoughts
+          display: block
+        .journal-latest-Tags
+        ul
+          display: inline-block
+          padding: 0
+          margin: 0
+          li
+            list-style-type: none
+            display: inline-block
+            padding-right: 1em

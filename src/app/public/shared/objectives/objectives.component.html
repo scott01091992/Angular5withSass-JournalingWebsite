@@ -1,3 +1,17 @@
-<p>
-  objectives works!
-</p>
+<div class='profile-objectives'>
+  <h1 class='profile-objectives-header'>Current Objectives</h1>
+  <div class='profile-objectives-content'>
+    <ul>
+      <h4 class='short-term-objective-header'>Short Term</h4>
+      <li *ngFor="let goal of goals.shortTerm">
+        <span class='objective-text'>{{goal}}</span>
+      </li>
+    </ul>
+    <ul>
+      <h4 class='long-term-objective-header'>Long Term</h4>
+      <li *ngFor="let goal of goals.longTerm">
+        <span class='objective-text'>{{goal}}</span>
+      </li>
+    </ul>
+  </div>
+</div>

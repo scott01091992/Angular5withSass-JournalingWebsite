@@ -7,6 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ObjectivesComponent implements OnInit {
 
+  goals = {
+    shortTerm: [
+      "This is a short term goal",
+      "This is a short term goal",
+      "This is a short term goal",
+      "This is a short term goal"
+    ],
+    longTerm: [
+      "This is a long term goal",
+      "This is a long term goal",
+      "This is a long term goal"
+    ]
+  }
+
   constructor() { }
 
   ngOnInit() {

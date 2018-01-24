@@ -1,3 +1,17 @@
-<p>
-  timeline works!
-</p>
+<div class='profile-timeline'>
+  <h1 class='profile-timeline-header'>Happiness Timeline</h1>
+  <div class='profile-timeline-timeline'>
+    <div class='timeline'>
+      <div class='timeline-row' *ngFor="let idx of [10,9,8,7,6,5,4,3,2,1]">
+        <div class='timeline-grid'><span class='happiness-level'>{{idx}}</span></div>
+        <div class='timeline-grid' *ngFor="let day of timeline"><div class='data-point' *ngIf="day.happiness == idx"></div></div>
+      </div>
+      <div class='date-row'>
+        <div class='timeline-grid'></div>
+        <div class='timeline-grid' *ngFor="let data of timeline">
+          <span class='timeline-date'>{{data.date}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
