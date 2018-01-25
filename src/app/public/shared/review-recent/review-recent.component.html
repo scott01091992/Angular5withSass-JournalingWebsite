@@ -1,3 +1,11 @@
-<p>
-  review-recent works!
-</p>
+<div class="review-recent">
+  <h1 class='review-recent-header'>Recent Reviews</h1>
+  <div class='review-recent-reviews'>
+    <ul>
+      <li *ngFor="let review of reviews">
+        <span class='review-title'>{{review.title}}</span>
+        <span class='review-date'>{{review.date}}</span>
+      </li>
+    </ul>
+  </div>
+</div>

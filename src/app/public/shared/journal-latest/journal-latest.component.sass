@@ -3,6 +3,9 @@
 .content-bolden
   font-family: $journal-content-bold
 
+.display-block
+  display: block
+
 .journal-latest
 
   .journal-latest-header
@@ -12,10 +15,19 @@
     margin: 0
 
   .journal-latest-entry
-    background-color: $tan
+    background-color: $lightblue
     padding: 2em
 
     .journal-latest-head
+      .journal-img-background
+        height: 15em
+        width: 100%
+        background-size: cover
+        background-repeat: no-repeat
+        opacity: .75
+        box-shadow: .2em .2em .2em $blue
+        margin-bottom: 2em
+
       h2
         margin: 0
         font-family: $journal-title-font
@@ -31,12 +43,17 @@
       p
         text-indent: 4em
       .journal-latest-details
-        .journal-latest-goals
-          display: block
-        .journal-latest-happiness
-          display: block
-        .journal-latest-thoughts
-          display: block
+        font-size: .8em
+
+        .journal-latest-emotion
+          .emotion-icon
+            display: inline-block
+            height: 1em
+            width: 1em
+            background-size: cover
+            padding: .1em
+
+
         .journal-latest-Tags
         ul
           display: inline-block

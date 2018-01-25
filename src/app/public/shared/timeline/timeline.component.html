@@ -1,10 +1,10 @@
 <div class='profile-timeline'>
-  <h1 class='profile-timeline-header'>Happiness Timeline</h1>
+  <h1 class='profile-timeline-header'>Productivity Timeline</h1>
   <div class='profile-timeline-timeline'>
     <div class='timeline'>
       <div class='timeline-row' *ngFor="let idx of [10,9,8,7,6,5,4,3,2,1]">
-        <div class='timeline-grid'><span class='happiness-level'>{{idx}}</span></div>
-        <div class='timeline-grid' *ngFor="let day of timeline"><div class='data-point' *ngIf="day.happiness == idx"></div></div>
+        <div class='timeline-grid'><span class='productivity-level'>{{idx}}</span></div>
+        <div class='timeline-grid' *ngFor="let day of timeline"><div class='data-point' *ngIf="day.productivity == idx"></div></div>
       </div>
       <div class='date-row'>
         <div class='timeline-grid'></div>

@@ -1,0 +1,70 @@
+@import "~assets/variables"
+
+.content-italicize
+  font-family: $review-content-italic
+
+.review-latest
+
+  .review-latest-header
+    font-family: $subheader-font
+    font-size: 1.5em
+    text-align: center
+    margin: 0
+
+  .review-latest-entry
+    background-color: $lightblue
+    padding: 2em
+    font-family: $review-content-font
+
+    .review-latest-head
+      margin-bottom: 2em
+      h2
+        margin: 0
+        font-family: $review-title-font
+        display: inline-block
+      h3
+        margin: 0
+        font-family: $review-title-font
+        display: inline-block
+        float: right
+    .review-row
+      display: flex
+      flex-direction: row
+      .review-latest-summary
+        flex-grow: 1
+        .review-latest-description
+        .review-latest-pros-cons-box
+          font-size: .8em
+          .pros
+            ul
+              span
+              li
+          .cons
+            ul
+              span
+              li
+          .review-latest-rating
+      .review-latest-thumbnail
+        height: auto
+        width: 10em
+        background-size: cover
+        background-repeat: no-repeat
+        margin-left: auto
+
+
+    .review-latest-content
+      p
+    .review-latest-details
+      font-size: .8em
+      .review-latest-recommended
+      ul
+        display: flex
+        flex-direction: row
+        li
+          list-style-type: none
+          padding: 0 1em
+
+    .review-latest-content
+      font-family: $review-content-font
+      p
+        text-indent: 4em

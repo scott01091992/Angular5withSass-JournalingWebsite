@@ -1,3 +1,43 @@
-<p>
-  review-latest works!
-</p>
+<div class="review-latest">
+  <h1 class='review-latest-header'>Latest Review</h1>
+  <div class='review-latest-entry'>
+    <div class='review-latest-head'>
+      <h2>{{review.title}}</h2>
+      <h3>{{review.date}}</h3>
+    </div>
+    <div class='review-row'>
+      <div class='review-latest-summary'>
+        <div class='review-latest-description'>
+          <span class='content-italicize'>Description: </span>{{review.description}}
+        </div>
+        <div class='review-latest-pros-cons-box'>
+          <div class='pros'>
+            <ul>
+              <span class='content-italicize'>Pros: </span>
+              <li *ngFor="let pro of review.pros">{{pro}}</li>
+            </ul>
+          </div>
+          <div class='cons'>
+            <ul>
+              <span class='content-italicize'>Cons: </span>
+              <li *ngFor="let con of review.cons">{{con}}</li>
+            </ul>
+          </div>
+          <span class='review-latest-rating'><span class='content-italicize'>Rating: </span> {{review.rating}}</span>
+        </div>
+      </div>
+      <div class='review-latest-thumbnail' [ngStyle]="{'background-image': 'url('+review.imgpath+')'}">
+      </div>
+    </div>
+    <div class='review-latest-content'>
+      <p>{{review.content}}</p>
+    </div>
+    <div class='review-latest-details'>
+      <span class='review-latest-recommended'><span class='content-italicize'>Recommendation: </span>{{review.recommended}}</span>
+      <ul class='review-latest-tags'>
+        <span class='content-italicize'>Tags :</span>
+        <li *ngFor="let tag of review.tags">{{tag}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

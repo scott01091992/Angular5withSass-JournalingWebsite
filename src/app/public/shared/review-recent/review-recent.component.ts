@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewRecentComponent implements OnInit {
 
+  reviews = [
+    {title: "Review Title", date: "Review Date"},
+    {title: "Review Title", date: "Review Date"},
+    {title: "Review Title", date: "Review Date"},
+    {title: "Review Title", date: "Review Date"},
+    {title: "", date: ""},
+    {title: "", date: ""},
+    {title: "", date: ""},
+    {title: "", date: ""}
+  ];
+
   constructor() { }
 
   ngOnInit() {

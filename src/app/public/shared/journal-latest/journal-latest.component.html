@@ -2,15 +2,19 @@
   <h1 class='journal-latest-header'>Latest Journal Entry</h1>
   <div class='journal-latest-entry'>
     <div class='journal-latest-head'>
+      <div class='journal-img-background' [ngStyle]="{'background-image': 'url('+entry.imgpath+')'}">
+      </div>
       <h2>{{entry.title}}</h2>
       <h3>{{entry.date}}</h3>
     </div>
     <div class='journal-latest-content'>
       <p>{{entry.content}}</p>
       <div class='journal-latest-details'>
-        <span class='journal-latest-goal'><span class='content-bolden'>Goal of the Day: </span>{{entry.goal}}</span>
-        <span class='journal-latest-happiness'><span class='content-bolden'>Happiness: </span>{{entry.happiness}}</span>
-        <span class='journal-latest-thoughts'><span class='content-bolden'>Additional Thoughts: </span>{{entry.thoughts}}</span>
+        <span class='journal-latest-goal display-block'><span class='content-bolden'>Goal of the Day: </span>{{entry.goal}}</span>
+        <span class='journal-latest-learned display-block'><span class='content-bolden'>What I Learned Today: </span>{{entry.learned}}</span>
+        <span class='journal-latest-productivity display-block'><span class='content-bolden'>Productivity Level: </span>{{entry.productivity}}</span>
+        <span class='journal-latest-thoughts display-block'><span class='content-bolden'>Additional Thoughts: </span>{{entry.thoughts}}</span>
+        <span class='journal-latest-emotion display-block'><span class='content-bolden'>Emotion of the Day: </span>{{entry.emotion}} <div class='emotion-icon' [ngStyle]="{'background-image': 'url('+entry.emotionimg+')'}"></div></span>
         <span class='journal-latest-tags'>
           <span class='content-bolden'>Tags: </span>
           <ul>
