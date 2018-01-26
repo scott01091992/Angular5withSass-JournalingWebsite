@@ -9,15 +9,15 @@ export class ObjectivesComponent implements OnInit {
 
   goals = {
     shortTerm: [
-      "This is a short term goal",
-      "This is a short term goal",
-      "This is a short term goal",
-      "This is a short term goal"
+      "Build A Website with a CMS",
+      "Learn about .NET architecture",
+      "Practice Layout Design and Logo Design",
+      "Consistently push content to github"
     ],
     longTerm: [
-      "This is a long term goal",
-      "This is a long term goal",
-      "This is a long term goal"
+      "Get a Job as a Developer",
+      "Finish School",
+      "Teach people how to code"
     ]
   }
 

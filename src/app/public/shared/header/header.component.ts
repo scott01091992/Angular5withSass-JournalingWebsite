@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  username = "Username";
-  aspiration = "Aspiration";
+  username = "Brandon Scott";
+  aspiration = "Developer & Designer";
 
   constructor() { }
 

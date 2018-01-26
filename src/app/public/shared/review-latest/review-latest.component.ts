@@ -8,16 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class ReviewLatestComponent implements OnInit {
 
   review = {
-    title: "Entry Title",
-    date: "Entry Date",
-    description: "This is the description of the game that i reviewed",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis finibus interdum enim quis euismod. Phasellus nibh ipsum, tristique sit amet laoreet id, tempor ut justo. Sed id turpis erat. Fusce convallis turpis in mauris aliquet, in rutrum nisi sollicitudin. Duis lectus diam, vestibulum sed lorem in, vulputate dignissim lectus. Mauris tortor metus, sagittis eu gravida a, consectetur ut odio. Phasellus sollicitudin libero vel turpis efficitur, sed condimentum dui maximus. Phasellus id tincidunt turpis. In sapien sapien, eleifend sed libero vel, dignissim laoreet eros. Phasellus convallis felis at nisi congue sagittis. Pellentesque rutrum sagittis massa quis placerat. Cras nulla dolor, tristique a condimentum a, vestibulum eu magna. Sed at porttitor erat. Maecenas euismod tortor ligula, ac convallis augue egestas at. In in laoreet tortor, et mollis lorem. Pellentesque in libero non nisl commodo commodo sit amet ut eros. Aliquam gravida leo at elit faucibus, porta egestalis",
-    rating: 87,
-    tags: ["Tag", "Tag", "Tag", "Tag", "Tag"],
-    pros: ["this is a pro for the game", "this is a pro for the game", "this is a pro for the game"],
-    cons: ["this is a con for the game", "this is a con for the game", "this is a con for the game"],
-    recommended: "i would recommend this game to this kind of gamer for this reason",
-    imgpath: "./../../../../assets/reviews/thumbnailreviewplaceholder.png"
+    title: "Path of Exile",
+    date: "01/23/2018",
+    description: "An multiplayer ARPG all about complex spell creation and character building in a dark fantasy environment.",
+    content: "Path of Exile is fantastic addition to the PC ARPG pool. The game features a complex character building system on top of a deep spell creation system. This combination allows for some of the most entertaining character building in an ARPG that i've seen. Taking a basic spell and combining it with other modifiers to make a silly or devastating version always feels good. The enemy types are varied enough to keep you interested and the ability to constantly modify your existing gear makes sure you never feel a drought in your character progression. With a cost of zero, this free to play game has a ton to offer. The setting will remind you a lot of diablo, so there is nothing unique in that respect, but if gear and skills are more important to you than story telling and graphics then this is a must play. The multiplayer is well implemented and the controls feel good as well. Path of Exile is a fantastic game, that I will continue to play with my friends for sure.",
+    rating: 88,
+    tags: ["ARPG", "Free to Play", "Dark Fantasy", "Character Building", "Multiplayer"],
+    pros: ["Endless possible builds for your character", "Fast paced action that stays challenging", "Free to Play and endless hours of entertainment"],
+    cons: ["Graphics are nothing impressive", "Lots of RNG involved"],
+    recommended: "I would recommend this to any arpg fan who isn't in it for flashy graphics and deep story",
+    imgpath: "./../../../../assets/reviewimgs/thumbnailreviewplaceholder.png"
   };
 
   constructor() { }

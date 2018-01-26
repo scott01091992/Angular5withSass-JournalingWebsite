@@ -13,6 +13,8 @@ import { VideofeedComponent } from './public/shared/videofeed/videofeed.componen
 import { ReviewLatestComponent } from './public/shared/review-latest/review-latest.component';
 import { ReviewRecentComponent } from './public/shared/review-recent/review-recent.component';
 import { HomepageComponent } from './public/homepage/homepage/homepage.component';
+import { JournalpageComponent } from './public/journalpage/journalpage/journalpage.component';
+import { CalendarComponent } from './public/shared/calendar/calendar.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { HomepageComponent } from './public/homepage/homepage/homepage.component
     VideofeedComponent,
     ReviewLatestComponent,
     ReviewRecentComponent,
-    HomepageComponent
+    HomepageComponent,
+    JournalpageComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule

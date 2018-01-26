@@ -1,0 +1,26 @@
+@import "~assets/variables"
+
+.calendar-container
+  width: 22em
+  h3
+    font-family: $subheader-font
+    text-align: center
+  .calendar
+    .weekday-box
+      display: flex
+      flex-direction: row
+      .weekday-name
+        flex-grow: 1
+        text-align: center
+        .weekday-text
+          font-family: $subtext-font
+  .calendar-days-box
+    display: flex
+    flex-wrap: wrap
+     
+    .day
+      height: 3em
+      width: 3em
+      .box
+        height: 100%
+        width: 100%
