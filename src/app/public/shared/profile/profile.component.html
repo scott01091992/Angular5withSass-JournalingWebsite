@@ -1,0 +1,80 @@
+<div class='profile-container'>
+  <div class='main-content'>
+    <div class='profile-row'>
+      <div class='profile-pic' [ngStyle]="{'background-image': 'url('+profile.profilepic+')'}"></div>
+      <div class='profile-about'>
+        <h3 class='profile-heading'>About</h3>
+        <div class='profile-about-content'>
+          <span class='profile-about-data'>
+            <span class='bold-font'>Name: </span>
+            {{profile.about.name}}
+          </span>
+          <span class='profile-about-data'>
+            <span class='bold-font'>DOB: </span>
+            {{profile.about.dob}}
+          </span>
+          <span class='profile-about-data'>
+            <span class='bold-font'>Location: </span>
+            {{profile.about.location}}
+          </span>
+          <span class='profile-about-data'>
+            <span class='bold-font'>Description: </span>
+            {{profile.about.description}}
+          </span>
+          <span class='profile-about-data'>
+            <span class='bold-font'>Values: </span>
+            <ul>
+              <li class='profile-about-values' *ngFor="let value of profile.about.values">{{value}}</li>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class='profile-row'>
+      <div class="profile-interests">
+        <h3 class='profile-heading'>Interests</h3>
+        <div class='interests-container'>
+          <div class='interest-box' *ngFor="let interest of profile.interests | mapObject"><h3>{{interest}}</h3><ul><li *ngFor="let data of profile.interests[interest]">{{data}}</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='side-bar'>
+    <div class='profile-goals'>
+      <h3 class='profile-heading'>Goals</h3>
+      <div class='profile-goals-primary'>
+        <span class='bold-font'>Primary: </span>
+        {{profile.goals.primary}}
+      </div>
+      <div class='profile-goals-shortTerm'>
+        <span class='bold-font'>Short Term Goals: </span>
+        <ul>
+          <li *ngFor="let goal of profile.goals.shortTerm">
+            {{goal}}
+          </li>
+        </ul>
+      </div>
+      <div class='profile-goals-longTerm'>
+        <span class='bold-font'>Long Term Goals: </span>
+        <ul>
+          <li *ngFor="let goal of profile.goals.longTerm">
+            {{goal}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="profile-strengths">
+      <ul>
+        <h3 class='profile-heading'>Strengths</h3>
+        <li *ngFor="let strength of profile.strengths">{{strength}}</li>
+      </ul>
+    </div>
+    <div class="profile-weaknesses">
+      <ul>
+        <h3 class='profile-heading'>Weaknesses</h3>
+        <li *ngFor="let weakness of profile.weaknesses">{{weakness}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

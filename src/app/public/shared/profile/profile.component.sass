@@ -1,0 +1,80 @@
+@import "~assets/variables"
+
+.bold-font
+  font-family: $profile-content-bold
+.profile-heading
+  font-family: $profile-header-font
+  text-align: center
+  margin: 0
+.profile-container
+  font-family: $profile-content-font
+  display: flex
+  .main-content
+    flex-grow: 3
+    .profile-row
+      display: flex
+      padding: 1.5em 3em
+      .profile-pic
+        flex-grow: 1
+        background-size: contain
+        background-position: center
+        background-repeat: no-repeat
+        border-radius: 50%
+        width: 33%
+        margin: 1em
+
+      .profile-about
+        box-shadow: .1em .1em .1em $blackRGBA
+        padding: 1em
+        flex-grow: 2
+        .profile-about-content
+          .profile-about-data
+            display: block
+
+      .profile-interests
+        box-shadow: .1em .1em .1em $blackRGBA
+        height: 100%
+        flex-grow: 2
+        padding: 1em
+        .profile-heading
+        .interests-container
+          display: flex
+          flex-direction: row
+          flex-wrap: wrap
+          .interest-box
+            margin: 1em
+            width: 20%
+            h3
+              text-transform: capitalize
+              text-align: center
+            ul
+              display: inline-block
+              margin: 0
+              padding: 0
+              li
+                list-style-type: none
+
+  .side-bar
+    flex-grow: 1
+    display: flex
+    flex-direction: column
+    .profile-goals
+      padding: 1em
+      .profile-goals-primary
+        margin: 1em 0
+
+    .profile-strengths
+      padding: 1em
+      flex-grow: 1
+      height: 100%
+      ul
+        h3
+          margin: 1em 0
+
+    .profile-weaknesses
+      padding: 1em
+      flex-grow: 1
+      height: 100%
+      ul
+        h3
+          margin: 1em 0

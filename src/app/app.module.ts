@@ -15,6 +15,11 @@ import { ReviewRecentComponent } from './public/shared/review-recent/review-rece
 import { HomepageComponent } from './public/homepage/homepage/homepage.component';
 import { JournalpageComponent } from './public/journalpage/journalpage/journalpage.component';
 import { CalendarComponent } from './public/shared/calendar/calendar.component';
+import { ReviewpageComponent } from './public/reviewpage/reviewpage/reviewpage.component';
+import { ReviewAllComponent } from './public/shared/review-all/review-all.component';
+import { ProfilepageComponent } from './public/profilepage/profilepage/profilepage.component';
+import { ProfileComponent } from './public/shared/profile/profile.component';
+import { MapObjectPipe } from './pipes/map-object.pipe';
 
 
 @NgModule({
@@ -31,7 +36,12 @@ import { CalendarComponent } from './public/shared/calendar/calendar.component';
     ReviewRecentComponent,
     HomepageComponent,
     JournalpageComponent,
-    CalendarComponent
+    CalendarComponent,
+    ReviewpageComponent,
+    ReviewAllComponent,
+    ProfilepageComponent,
+    ProfileComponent,
+    MapObjectPipe
   ],
   imports: [
     BrowserModule

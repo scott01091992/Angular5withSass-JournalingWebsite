@@ -60,8 +60,18 @@ let createCalendar = (moment, entries) => {
 export class CalendarComponent implements OnInit {
 
   calendarObj;
+  calendarColor;
 
   constructor() {
+    this.calendarColor = (dayConditional: boolean, entryConditional: boolean) => {
+      if(dayConditional != true){
+        return {'background-color': '#d2f3ff'};
+      }else if(entryConditional == true){
+        return {'background-color': 'rgba(229, 160, 64, .2)'};
+      }else{
+        return {'background-color': 'rgba(250, 250, 250, .2)'};
+      }
+    };
     this.calendarObj = createCalendar(testingMoment, testingEntries);
   }
 
