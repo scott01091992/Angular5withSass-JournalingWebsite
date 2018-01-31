@@ -10,13 +10,16 @@ export class ProfileComponent implements OnInit {
   profile = {
     profilepic: "./../../../assets/profile/profilepic.png",
     about: {
-      name: "Brandon Scott",
-      dob: "01/09/1992",
-      location: "Kent WA",
-      description: "I am an optimistic computer enthusiast who aspires to become a developer in order to exercise my interests in problem solving and code",
+      name: ["Brandon Scott"],
+      dob: ["01/09/1992"],
+      location: ["Kent WA"],
+      description: ["I am an optimistic computer enthusiast who aspires to become a developer in order to exercise my interests in problem solving and code"],
       values: ["Scientific Method", "The Golden Rule", "Mathematics", "Logic", "Enjoying Life"]
     },
     goals: {
+      primary: [
+        "Get hired as a Developer"
+      ],
       shortTerm: [
         "Build an Angular5 application",
         "Learn Korean",
@@ -27,8 +30,7 @@ export class ProfileComponent implements OnInit {
         "Get BA Degree in Computer Science or Computer Networking",
         "Learn a Machine Language",
         "Build an Application using Java"
-      ],
-      primary: "Get hired as a Developer"
+      ]
     },
     weaknesses: [
       "Putting other before myself",
@@ -51,75 +53,97 @@ export class ProfileComponent implements OnInit {
       "Taking action without instruction and working autonomously"
     ],
     interests: {
-      optimization: [
-        "Productivity",
-        "Game Theory",
-        "Algorithmic Thinking",
-        "Planning",
-        "Time Saving",
-        "Organization"
-      ],
-      design: [
-        "User Experience",
-        "Logo Design",
-        "Color Theory",
-        "Typography",
-        "Marketing",
-        "Adobe CC",
-        "Styleguides"
-      ],
-      development: [
-        "Angular Frameworks",
-        "EMCA",
-        "Object Oriented Programming",
-        "Pre-Processors",
-        "Database Modeling",
-        "Workflows",
-        "Information Architecture",
-        "Search Engine Optimization",
-        "Modern Frameworks"
-      ],
-      gaming: [
-        "Theory Crafting",
-        "Macro Competitive Strategy",
-        "Game Mechanics and Systems",
-        "Min/Maxing",
-        "Cooperative Strategy",
-        "Character Building"
-      ],
-      science: [
-        "Physics",
-        "Quantum Physics",
-        "Psychology",
-        "Chemistry",
-        "Cosmology",
-        "Mechanical Engineering",
-        "Electrical Engineering",
-        "Computer Science",
-        "Sociology",
-        "Statistical Analysis",
-        "Neural Networks"
-      ],
-      investigation: [
-        "Observation",
-        "Detailed Note Taking",
-        "Documentation",
-        "Body Language Understanding",
-        "Pattern Recognition",
-        "Abstract Connections",
-        "Data Analysis",
-        "Surveillance"
-      ],
-      miscellaneous: [
-        "Cooking",
-        "Meditation",
-        "Self Improvement",
-        "Life Documenation",
-        "Film Photography",
-        "Travel",
-        "Long Distance Running",
-        "Cognitive Improvement"
-      ]
+      optimization: {
+        imgpath: "./../../../../assets/static/optimizationicon.svg",
+        list: [
+          "Productivity",
+          "Game Theory",
+          "Algorithmic Thinking",
+          "Planning",
+          "Time Saving",
+          "Organization"
+        ]
+      }
+      ,
+      design: {
+        imgpath: "./../../../../assets/static/designicon.svg",
+        list: [
+          "User Experience",
+          "Logo Design",
+          "Color Theory",
+          "Typography",
+          "Marketing",
+          "Adobe CC",
+          "Styleguides"
+        ]
+      },
+      development: {
+        imgpath: "./../../../../assets/static/developmenticon.svg",
+        list: [
+          "Angular Frameworks",
+          "EMCA",
+          "Object Oriented Programming",
+          "Pre-Processors",
+          "Database Modeling",
+          "Workflows",
+          "Information Architecture",
+          "Search Engine Optimization",
+          "Modern Frameworks"
+        ]
+      },
+      gaming: {
+        imgpath: "./../../../../assets/static/gamingicon.svg",
+        list: [
+          "Theory Crafting",
+          "Macro Competitive Strategy",
+          "Game Mechanics and Systems",
+          "Min/Maxing",
+          "Cooperative Strategy",
+          "Character Building"
+        ]
+      },
+      science: {
+        imgpath: "./../../../../assets/static/scienceicon.svg",
+        list: [
+          "Physics",
+          "Quantum Physics",
+          "Psychology",
+          "Chemistry",
+          "Cosmology",
+          "Mechanical Engineering",
+          "Electrical Engineering",
+          "Computer Science",
+          "Sociology",
+          "Statistical Analysis",
+          "Neural Networks"
+        ]
+      },
+      investigation: {
+        imgpath: "./../../../../assets/static/investigationicon.svg",
+        list: [
+          "Observation",
+          "Detailed Note Taking",
+          "Documentation",
+          "Body Language Understanding",
+          "Pattern Recognition",
+          "Abstract Connections",
+          "Data Analysis",
+          "Surveillance"
+        ]
+      },
+      miscellaneous: {
+        imgpath: "./../../../../assets/static/miscellaneousicon.svg",
+        list: [
+          "Cooking",
+          "Meditation",
+          "Self Improvement",
+          "Life Documenation",
+          "Film Photography",
+          "Travel",
+          "Long Distance Running",
+          "Cognitive Improvement"
+        ]
+      }
     }
   };
 

@@ -7,7 +7,7 @@ header
 
   .icon-title-container
     display: inline-flex
-    align-items: center
+    align-items: baseline
     .icon-img
         height: 5em
         margin: 1em
@@ -16,20 +16,29 @@ header
     .icon-title
       .icon-title-username
         font-size: 2em
+        letter-spacing: -.05em
         margin-left: .5em
         font-family: $header-font
         color: $black
       .icon-title-aspiration
         font-family: $subtext-font
         color: $white
+        font-size: 1em
 
   nav
     margin-left: auto
     ul
       margin-right: 3em
       li
-        font-size: .8em
+        font-size: .9em
         font-family: $navigation-font
         display: inline-block
         padding: 0 2.7em 0 0
         color: $white
+        a
+          color: white
+          text-decoration: none
+        a:focus
+          color: $orange
+        a:visited
+          color: white

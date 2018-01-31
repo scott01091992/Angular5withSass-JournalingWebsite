@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -20,6 +21,31 @@ import { ReviewAllComponent } from './public/shared/review-all/review-all.compon
 import { ProfilepageComponent } from './public/profilepage/profilepage/profilepage.component';
 import { ProfileComponent } from './public/shared/profile/profile.component';
 import { MapObjectPipe } from './pipes/map-object.pipe';
+
+const appRoutes: Routes = [
+  {
+    path: 'home',
+    component: HomepageComponent
+  },
+  {
+    path: 'journal',
+    component: JournalpageComponent
+  },
+  {
+    path: 'reviews',
+    component: ReviewpageComponent,
+    data: { title: 'Heroes List' }
+  },
+  {
+    path: 'profile',
+    component: ProfilepageComponent
+  },
+  { path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  }
+  //{ path: '**', component: PageNotFoundComponent }
+];
 
 
 @NgModule({
@@ -44,7 +70,11 @@ import { MapObjectPipe } from './pipes/map-object.pipe';
     MapObjectPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

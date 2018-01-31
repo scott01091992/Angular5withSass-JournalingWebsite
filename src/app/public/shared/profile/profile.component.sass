@@ -1,52 +1,78 @@
 @import "~assets/variables"
 
+h1
+  font-family: $profile-title-font
+  text-align: center
+
 .bold-font
   font-family: $profile-content-bold
+  text-transform: capitalize
+
 .profile-heading
   font-family: $profile-header-font
   text-align: center
   margin: 0
+
 .profile-container
   font-family: $profile-content-font
+  background-color: $white
   display: flex
+  padding: 2em
+
+
+
   .main-content
     flex-grow: 3
+
     .profile-row
       display: flex
-      padding: 1.5em 3em
+      padding: 0 1.5em
+
       .profile-pic
         flex-grow: 1
         background-size: contain
         background-position: center
         background-repeat: no-repeat
         border-radius: 50%
-        width: 33%
-        margin: 1em
+        width: 50%
+        margin: 0 3em 0 0
 
       .profile-about
-        box-shadow: .1em .1em .1em $blackRGBA
         padding: 1em
         flex-grow: 2
-        .profile-about-content
-          .profile-about-data
-            display: block
+        background-color: white
+        .notList
+          list-style-type: none
+        .isList
+          list-style-type: circle
 
       .profile-interests
-        box-shadow: .1em .1em .1em $blackRGBA
         height: 100%
         flex-grow: 2
         padding: 1em
-        .profile-heading
+        margin-bottom: 2em
         .interests-container
           display: flex
           flex-direction: row
           flex-wrap: wrap
+          margin-top: 1em
+          justify-content: center
           .interest-box
-            margin: 1em
+            margin: .5em
+            padding: 2 em
+            background-color: $orangeRGBA
+            border-radius: 5px
             width: 20%
+            display: flex
+            flex-direction: column
+            align-items: center
+            text-align: center
+            .interest-icon
+              height: 3em
+              width: auto
+              margin-top: 1em
             h3
               text-transform: capitalize
-              text-align: center
             ul
               display: inline-block
               margin: 0
@@ -58,23 +84,26 @@
     flex-grow: 1
     display: flex
     flex-direction: column
+    background-color: white
+    border-radius: 5px
+
+    div > h2
+      margin: 0
+
+    ul
+      padding-right: 2em
+      li
+        list-style-type: square
+
     .profile-goals
       padding: 1em
-      .profile-goals-primary
-        margin: 1em 0
+      border-bottom: 1px solid $blackRGBA
 
     .profile-strengths
       padding: 1em
-      flex-grow: 1
       height: 100%
-      ul
-        h3
-          margin: 1em 0
+      border-bottom: 1px solid $blackRGBA
 
     .profile-weaknesses
       padding: 1em
-      flex-grow: 1
       height: 100%
-      ul
-        h3
-          margin: 1em 0

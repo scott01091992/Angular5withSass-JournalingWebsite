@@ -2,27 +2,7 @@
   <h3>{{calendarObj.month}}</h3>
   <div class='calendar'>
     <div class='weekday-box'>
-      <div class='weekday-name'>
-        <span class='weekday-text'>Su</span>
-      </div>
-      <div class='weekday-name'>
-        <span class='weekday-text'>Mo</span>
-      </div>
-      <div class='weekday-name'>
-        <span class='weekday-text'>Tu</span>
-      </div>
-      <div class='weekday-name'>
-        <span class='weekday-text'>We</span>
-      </div>
-      <div class='weekday-name'>
-        <span class='weekday-text'>Th</span>
-      </div>
-      <div class='weekday-name'>
-        <span class='weekday-text'>Fr</span>
-      </div>
-      <div class='weekday-name'>
-        <span class='weekday-text'>Sa</span>
-      </div>
+      <div class='weekday-name' *ngFor="let day of ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']">{{day}}</div>
     </div>
     <div class='calendar-days-box'>
       <div class='day' *ngFor="let day of calendarObj.calendar">
@@ -31,5 +11,5 @@
         </div>
       </div>
     </div>
-</div>
+  </div>
 </div>
