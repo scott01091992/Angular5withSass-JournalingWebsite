@@ -1,7 +1,7 @@
 @import "~assets/variables"
 
-.content-italicize
-  font-family: $review-content-italic
+.content-bold
+  font-family: $review-content-bold
 
 .review-latest
 
@@ -18,56 +18,44 @@
 
     .review-latest-head
       margin-bottom: 2em
+      font-family: $review-title-font
       h2
         margin: 0
-        font-family: $review-title-font
         display: inline-block
       h3
         margin: 0
-        font-family: $review-title-font
         display: inline-block
         float: right
+
     .review-row
       display: flex
       flex-direction: row
-      margin-bottom: 2em
+      margin-bottom: 3em
 
       .review-latest-summary
         flex-grow: 1
-        .review-latest-description
-          font-size: .8em
-        .review-latest-pros-cons-box
-          font-size: .8em
-          .pros
-            ul
-              span
-              li
-          .cons
-            ul
-              span
-              li
-          .review-latest-rating
+        font-size: .9em
+        ul
+          padding: 0
+          li
+            margin-left: 1em
+
       .review-latest-thumbnail
         height: auto
-        width: 10em
+        width: 12em
         background-size: cover
         background-repeat: no-repeat
         margin-left: auto
 
-
-    .review-latest-content
-      p
+    p
+      text-indent: 4em
+      margin: 3em 0
     .review-latest-details
-      font-size: .8em
-      .review-latest-recommended
+      font-size: .9em
       ul
         display: flex
         flex-direction: row
+        padding: 0
         li
           list-style-type: none
           padding: 0 1em
-
-    .review-latest-content
-      font-family: $review-content-font
-      p
-        text-indent: 4em

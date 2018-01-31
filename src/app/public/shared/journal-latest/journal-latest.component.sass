@@ -3,9 +3,6 @@
 .content-bolden
   font-family: $journal-content-bold
 
-.display-block
-  display: block
-
 .journal-latest
 
   .journal-latest-header
@@ -16,7 +13,7 @@
 
   .journal-latest-entry
     background-color: white
-    padding: 2em
+    padding: 3em 4em
 
     .journal-latest-head
       .journal-img-background
@@ -39,18 +36,20 @@
 
     .journal-latest-content
       font-family: $journal-content-font
-      p
+      .journal-content-paragraphs
         text-indent: 4em
+        margin: 2em 0 4em
       .journal-latest-details
-        font-size: .8em
+        font-size: .9em
+        p
+          text-indent: 0
 
-        .journal-latest-emotion
-          .emotion-icon
-            display: inline-block
-            height: 1em
-            width: 1em
-            background-size: cover
-            padding: .1em
+        .emotion-icon
+          display: inline-block
+          height: 1em
+          width: 1em
+          background-size: cover
+          padding: .1em
 
 
         .journal-latest-Tags

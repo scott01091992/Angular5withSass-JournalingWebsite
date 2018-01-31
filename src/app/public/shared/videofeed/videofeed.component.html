@@ -2,9 +2,14 @@
   <h1>Recent Liked Videos</h1>
   <div class='video-feed'>
     <div class='video-thumbnail' *ngFor="let video of videos">
-      <a href="{{video.link}}">
-        <img src="{{video.thumbnail}}">
-      </a>
+      <div class="thumbnail-title">
+        <h3>{{video.title}}</h3>
+      </div>
+      <div class="thumbnail-container">
+        <a href="{{video.link}}">
+          <img src="{{video.thumbnail}}">
+        </a>
+      </div>
     </div>
   </div>
 </div>

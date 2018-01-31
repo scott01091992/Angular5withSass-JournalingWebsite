@@ -11,12 +11,23 @@ h1
   background-color: white
   display: flex
   flex-direction: row
+  padding: 1em
 
   .video-thumbnail
-    margin: .5em
-    overflow: hidden
-    a
-      img
-        height: auto
-        width: 100%
-        margin: -2.4em 0
+    .thumbnail-title
+      height: 3em
+      display: flex
+      align-items: center
+      justify-content: center
+      h3
+        font-family: $thumbnail-header-font
+        text-align: center
+
+    .thumbnail-container
+      margin: .5em
+      overflow: hidden
+      a
+        img
+          height: auto
+          width: 100%
+          margin: -2.4em 0

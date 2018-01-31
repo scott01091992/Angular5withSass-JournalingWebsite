@@ -10,7 +10,7 @@
     margin: .5em
 
   .review-recent-reviews
-    background-color: $orangeRGBA
+    background-color: white
     display: flex
     flex-direction: column
     padding: 0 1em 1em 1em
@@ -20,9 +20,12 @@
       align-items: stretch
       li
         font-family: $list-font
-        padding: 1em 0
+        margin: 1em 0
+        padding: .5em
         display: flex
-        border-bottom: 1px solid $blackRGBA
+        box-shadow: .3em .3em .3em $black
+        background-color: $blue
+        color: $white
         .review-title
 
         .review-date

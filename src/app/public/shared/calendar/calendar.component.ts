@@ -65,7 +65,7 @@ export class CalendarComponent implements OnInit {
   constructor() {
     this.calendarColor = (dayConditional: boolean, entryConditional: boolean) => {
       if(dayConditional != true){
-        return {'background-color': '#d2f3ff'};
+        return {'background-color': 'rgba(60, 165, 255, .2)'};
       }else if(entryConditional == true){
         return {'background-color': 'rgba(229, 160, 64, .2)'};
       }else{
