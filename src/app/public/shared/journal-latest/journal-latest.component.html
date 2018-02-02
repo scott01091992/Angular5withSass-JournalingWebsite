@@ -1,6 +1,6 @@
 <div class="journal-latest">
   <h1 class='journal-latest-header'>Latest Journal Entry</h1>
-  <div class='journal-latest-entry'>
+  <div *ngIf="entry != null" class='journal-latest-entry'>
     <div class='journal-latest-head'>
       <div class='journal-img-background' [ngStyle]="{'background-image': 'url('+entry.imgpath+')'}">
       </div>
@@ -8,7 +8,7 @@
       <h3>{{entry.date}}</h3>
     </div>
     <div class='journal-latest-content'>
-      <p class='journal-content-paragraphs'>{{entry.content}}</p>
+      <p class='journal-content-paragraphs' *ngFor="let para of entry.content">{{para}}</p>
       <div class='journal-latest-details'>
         <p>
           <span class='content-bolden'>Goal of the Day: </span>

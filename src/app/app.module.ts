@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
+import { JournalService } from './services/journal.service';
+import { ReviewService } from './services/review.service';
+import { ProfileService } from './services/profile.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './public/shared/header/header.component';
@@ -71,12 +75,13 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule, 
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }
     )
   ],
-  providers: [],
+  providers: [JournalService, ReviewService, ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
