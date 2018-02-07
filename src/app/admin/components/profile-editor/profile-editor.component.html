@@ -1,0 +1,10 @@
+<div>
+  <h1>Profile Editor</h1>
+  <div class="profile-editor">
+    <div class='editor-control' *ngFor="let aboutData of profile.about | mapObject">
+      <label>{{aboutData}}</label>
+      <input placeholder="{{profile.about[aboutData]}}" type='text' [disabled]="propEdit[aboutData] == false">
+      <button *ngIf="propEdit[aboutData] == false" (click)="EditClick(aboutData)">Edit</button><button *ngIf="propEdit[aboutData] == true" (click)="EditClick(aboutData)">Save</button>
+    </div>
+  </div>
+</div>

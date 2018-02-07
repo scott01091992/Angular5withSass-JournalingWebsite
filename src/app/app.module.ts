@@ -26,6 +26,10 @@ import { ProfilepageComponent } from './public/profilepage/profilepage/profilepa
 import { ProfileComponent } from './public/shared/profile/profile.component';
 import { MapObjectPipe } from './pipes/map-object.pipe';
 import { CmspageComponent } from './admin/cmspage/cmspage/cmspage.component';
+import { CmsHeaderComponent } from './admin/components/cms-header/cms-header.component';
+import { ProfileEditorComponent } from './admin/components/profile-editor/profile-editor.component';
+import { JournalEditorComponent } from './admin/components/journal-editor/journal-editor.component';
+import { ReviewEditorComponent } from './admin/components/review-editor/review-editor.component';
 
 const appRoutes: Routes = [
   {
@@ -44,6 +48,10 @@ const appRoutes: Routes = [
   {
     path: 'profile',
     component: ProfilepageComponent
+  },
+  {
+    path: 'cms',
+    component: CmspageComponent
   },
   { path: '',
     redirectTo: '/home',
@@ -73,11 +81,15 @@ const appRoutes: Routes = [
     ProfilepageComponent,
     ProfileComponent,
     MapObjectPipe,
-    CmspageComponent
+    CmspageComponent,
+    CmsHeaderComponent,
+    ProfileEditorComponent,
+    JournalEditorComponent,
+    ReviewEditorComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule, 
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }
