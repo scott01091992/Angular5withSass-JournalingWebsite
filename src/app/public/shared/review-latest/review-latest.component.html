@@ -1,6 +1,6 @@
 <div class="review-latest">
   <h1 class='review-latest-header'>Latest Review</h1>
-  <div class='review-latest-entry'>
+  <div class='review-latest-entry' *ngIf="review != null">
     <div class='review-latest-head'>
       <h2>{{review.title}}</h2>
       <h3>{{review.date}}</h3>
@@ -22,7 +22,7 @@
       </div>
     </div>
     <hr>
-    <p>{{review.content}}</p>
+    <p *ngFor="let para of review.content">{{para}}</p>
     <div class='review-latest-details'>
       <span class='content-bold'>Recommendation: </span>{{review.recommended}}
       <ul>

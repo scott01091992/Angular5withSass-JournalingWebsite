@@ -7,8 +7,9 @@ export class JournalService {
 
   constructor(private http: HttpClient) { }
 
-  // Get all posts from the API
   getLatestJournal() {
+    console.log('requesting data');
     return this.http.get('/latestJournal');
   }
+
 }

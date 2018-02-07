@@ -13,10 +13,12 @@ export class JournalLatestComponent implements OnInit {
   constructor(private journalService: JournalService) { }
 
   ngOnInit() {
+
     this.journalService.getLatestJournal().subscribe(entry => {
       console.log(entry);
       this.entry = entry;
     })
+
   }
 
 }

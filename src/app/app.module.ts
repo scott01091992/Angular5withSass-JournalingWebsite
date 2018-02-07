@@ -25,6 +25,7 @@ import { ReviewAllComponent } from './public/shared/review-all/review-all.compon
 import { ProfilepageComponent } from './public/profilepage/profilepage/profilepage.component';
 import { ProfileComponent } from './public/shared/profile/profile.component';
 import { MapObjectPipe } from './pipes/map-object.pipe';
+import { CmspageComponent } from './admin/cmspage/cmspage/cmspage.component';
 
 const appRoutes: Routes = [
   {
@@ -71,7 +72,8 @@ const appRoutes: Routes = [
     ReviewAllComponent,
     ProfilepageComponent,
     ProfileComponent,
-    MapObjectPipe
+    MapObjectPipe,
+    CmspageComponent
   ],
   imports: [
     BrowserModule,

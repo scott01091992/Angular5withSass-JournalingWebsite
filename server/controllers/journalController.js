@@ -3,7 +3,8 @@ var journalEntry = mongoose.model('JournalEntry');
 module.exports = (function(){
   return {
     get: function(req, res){
-      journalEntry.findOne({date: "02/02/2018"}, function(err, entry){
+      console.log("IM HERE");
+      journalEntry.findOne().sort({created_at: -1}).exec(function(err, entry){
         if(err){
           console.log(err);
         }else{
