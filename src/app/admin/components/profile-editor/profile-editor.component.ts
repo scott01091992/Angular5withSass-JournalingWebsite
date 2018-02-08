@@ -154,6 +154,13 @@ export class ProfileEditorComponent implements OnInit {
     description: false
   }
 
+  newValue = "";
+  newGoal = "";
+  newStrength = "";
+  newWeakness = "";
+
+  interestModel = [];
+
   EditClick = (target) => {
     if(target == "name"){
       this.propEdit.name ? this.propEdit.name = false : this.propEdit.name = true;
@@ -166,6 +173,55 @@ export class ProfileEditorComponent implements OnInit {
     }else{
       console.log("Error: data = " + target);
     }
+  }
+
+  removeValue = (index) => {
+    this.profile.values.splice(index, 1);
+  }
+  addValue = (val) => {
+    this.profile.values.push(val);
+    this.newValue = "";
+  }
+
+  removeGoal = (type, idx) => {
+    if(type == "primary"){
+      this.profile.goals.primary.splice(idx, 1);
+    }else if (type == "shortTerm"){
+      this.profile.goals.shortTerm.splice(idx, 1);
+    }else if (type == "longTerm"){
+      this.profile.goals.longTerm.splice(idx, 1);
+    }else {
+      console.log('invalid goal type');
+    }
+  }
+
+  addGoalPrimary = (goal) => {
+    this.profile.goals.primary.push(goal);
+    this.newGoal = "";
+  }
+  addGoalShortTerm = (goal) => {
+    this.profile.goals.shortTerm.push(goal);
+    this.newGoal = "";
+  }
+  addGoalLongTerm = (goal) => {
+    this.profile.goals.longTerm.push(goal);
+    this.newGoal = "";
+  }
+
+  removeStrength = (idx) => {
+    this.profile.strengths.splice(idx, 1);
+  }
+  addStrength = (strength) => {
+    this.profile.strengths.push(strength);
+    this.newStrength = "";
+  }
+
+  removeWeakness = (idx) => {
+    this.profile.weaknesses.splice(idx, 1);
+  }
+  addWeakness = (weakness) => {
+    this.profile.weaknesses.push(weakness);
+    this.newWeakness = "";
   }
 
   constructor() { }
