@@ -1,60 +1,93 @@
-<div>
-  <h1>Profile Editor</h1>
+<h1>Profile Editor</h1>
+<div class='cms-profile-container'>
   <div class="profile-editor">
-    <div class='editor-control' *ngFor="let aboutData of profile.about | mapObject">
-      <label>{{aboutData}}</label>
-      <input placeholder="{{profile.about[aboutData]}}" type='text' [disabled]="propEdit[aboutData] == false">
-      <button *ngIf="propEdit[aboutData] == false" (click)="EditClick(aboutData)">Edit</button><button *ngIf="propEdit[aboutData] == true" (click)="EditClick(aboutData)">Save</button>
-    </div>
     <div class='editor-control'>
-      <label>Values</label>
-      <ul>
-        <li *ngFor="let value of profile.values; let i = index">{{value}}<button (click)="removeValue(i)">remove</button></li>
-      </ul>
-      <input  type='text' [(ngModel)]="newValue">
-      <button (click)="addValue(newValue)">add</button>
-    </div>
-    <div class='editor-control'>
-      <label>Goals</label>
-      <div class='goals-repaeat' *ngFor="let goalType of profile.goals | mapObject">
-        <h5>{{goalType}}</h5>
-        <ul>
-          <li *ngFor="let goal of profile.goals[goalType]; let i = index">{{goal}}<button (click)="removeGoal(goalType, i)">remove</button></li>
-        </ul>
+      <div class="about-editor" *ngFor="let aboutData of profile.about | mapObject">
+        <label>{{aboutData}}:</label>
+        <input placeholder="{{profile.about[aboutData]}}" type='text' [disabled]="propEdit[aboutData] == false">
+        <button *ngIf="propEdit[aboutData] == false" (click)="EditClick(aboutData)">Edit</button><button *ngIf="propEdit[aboutData] == true" (click)="EditClick(aboutData)">Save</button>
       </div>
-      <input type="text" [(ngModel)]="newGoal">
-      <button (click)="addGoalPrimary(newGoal)">Add to Primary</button>
-      <button (click)="addGoalShortTerm(newGoal)">Add to Short Term</button>
-      <button (click)="addGoalLongTerm(newGoal)">Add to Long Term</button>
-    </div>
-    <div class="editor-control">
-      <label>Strengths</label>
-      <ul>
-        <li *ngFor="let strength of profile.strengths; let i = index">{{strength}}<button (click)="removeStrength(i)">remove</button></li>
-      </ul>
-      <input type='text' [(ngModel)]="newStrength">
-      <button (click)="addStrength(newStrength)">Add</button>
-    </div>
-    <div class="editor-control">
-      <label>Weaknesses</label>
-      <ul>
-        <li *ngFor="let weakness of profile.weaknesses; let i = index">{{weakness}}<button (click)="removeWeakness(i)">remove</button></li>
-      </ul>
-      <input type='text' [(ngModel)]="newWeakness">
-      <button (click)="addWeakness(newWeakness)">Add</button>
     </div>
     <div class='editor-control'>
-      <label>Interests</label>
-      <div class="interest-control" *ngFor="let interestName of profile.interests | mapObject">
-        <label>{{interestName}}</label>
+      <div class='values-editor'>
+        <label>Values</label>
         <ul>
-          <li *ngFor="let interest of profile.interests[interestName].list; let i = index">{{interest}}<button (click)="removeInterest(interestName, i)">remove</button></li>
+          <li *ngFor="let value of profile.values; let i = index">{{value}}<button (click)="removeValue(i)">remove</button></li>
         </ul>
-        <input type='text' ngmodel
-        <button (click)="addInterest()">Add Interest</button>
-        <input type="text">
-        <input type="file">
-        <button>add</button>
+        <hr>
+        <div class='newValue'>
+          <label>New Value: </label>
+          <input  type='text' [(ngModel)]="newValue">
+          <button (click)="addValue(newValue)">add</button>
+        </div>
+      </div>
+    </div>
+    <div class='editor-control'>
+      <div class="goals-editor">
+        <label>Goals</label>
+        <div class='goals-repeat' *ngFor="let goalType of profile.goals | mapObject">
+          <h4>{{goalType}}</h4>
+          <ul>
+            <li *ngFor="let goal of profile.goals[goalType]; let i = index">{{goal}}<button (click)="removeGoal(goalType, i)">remove</button></li>
+          </ul>
+        </div>
+        <hr>
+        <label>New Goal: </label>
+        <input type="text" [(ngModel)]="newGoal">
+        <div class='buttonSelect'>
+          <button (click)="addGoalPrimary(newGoal)">Add to Primary</button>
+          <button (click)="addGoalShortTerm(newGoal)">Add to Short Term</button>
+          <button (click)="addGoalLongTerm(newGoal)">Add to Long Term</button>
+        </div>
+      </div>
+    </div>
+    <div class="editor-control">
+      <div class='strengths-editor'>
+        <label>Strengths</label>
+        <ul>
+          <li *ngFor="let strength of profile.strengths; let i = index">{{strength}}<button (click)="removeStrength(i)">remove</button></li>
+        </ul>
+        <div class='newStrength'>
+          <label>New Strength: </label>
+          <input type='text' [(ngModel)]="newStrength">
+          <button (click)="addStrength(newStrength)">Add</button>
+        </div>
+      </div>
+    </div>
+    <div class="editor-control">
+      <div class="weaknesses-editor">
+        <label>Weaknesses</label>
+        <ul>
+          <li *ngFor="let weakness of profile.weaknesses; let i = index">{{weakness}}<button (click)="removeWeakness(i)">remove</button></li>
+        </ul>
+        <div class="newWeakness">
+          <label>New Weakness: </label>
+          <input type='text' [(ngModel)]="newWeakness">
+          <button (click)="addWeakness(newWeakness)">Add</button>
+        </div>
+      </div>
+    </div>
+    <div class='editor-control'>
+      <div class='interest-editor'>
+        <label>Interests</label>
+        <div class="interest-control" *ngFor="let interestName of profile.interests | mapObject">
+          <label>{{interestName}}</label>
+          <img src="{{profile.interests[interestName].imgpath}}">
+          <ul>
+            <li *ngFor="let interest of profile.interests[interestName].list; let i = index">{{interest}}<button (click)="removeInterest(interestName, i)">remove</button></li>
+          </ul>
+          <label>New Interest</label>
+          <input type='text'>
+          <button (click)="addInterest()">Add Interest</button>
+          <label>Change Image</label>
+          <input type="file">
+          <button>Save Img</button>
+          <button>Remove Catagory</button>
+        </div>
+        <hr>
+        <label>New Catagory</label>
+        <input type='text'>
+        <button>Add Catagory</button>
       </div>
     </div>
   </div>

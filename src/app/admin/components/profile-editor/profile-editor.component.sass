@@ -1,0 +1,153 @@
+@import "~assets/variables"
+
+h1
+  font-family: $header-font
+  text-align: center
+
+h4
+  font-family: $subtext-font
+  text-transform: capitalize
+
+label
+  font-family: $profile-content-bold
+  text-transform: capitalize
+
+input
+  border: none
+  border-radius: .2em
+  padding: .5em
+  background-color: $redRGBA
+
+input:disabled
+  background-color: $white
+
+button
+  border: none
+  padding: .3em 1.3em
+  background-color: $blue
+  color: $white
+
+.cms-profile-container
+  display: flex
+  flex-direction: row
+  padding: 1em
+  background: $whiteRGBA
+  font-family: $profile-content-font
+  flex-wrap: wrap
+
+  .profile-editor
+    display: flex
+    flex-wrap: wrap
+    background-color: white
+    padding: 1em
+
+    .editor-control
+      width: 45%
+      padding: 1em
+      margin: .5em
+      box-shadow: .2em .2em .5em $black
+
+      .about-editor
+        display: flex
+        align-items: center
+        input
+          flex-grow: 1
+
+      .values-editor
+        ul
+          display: flex
+          flex-direction: column
+          li
+            flex-grow: 1
+            margin-top: .5em
+            button
+              float: right
+
+        .newValue
+          display: flex
+          input
+            flex-grow: 1
+            margin: 0 .5em
+
+      .goals-editor
+        input
+          width: 75%
+
+        .buttonSelect
+          display: flex
+          button
+            margin: .2em
+            flex-grow: 1
+
+        .goals-repeat
+          ul
+            display: flex
+            flex-direction: column
+            li
+              flex-grow: 1
+              margin-top: .5em
+              button
+                float: right
+
+      .strengths-editor
+        display: flex
+        flex-direction: column
+        ul
+          display: flex
+          flex-direction: column
+          li
+            flex-grow: 1
+            margin-top: .5em
+            button
+              float: right
+
+        .newStrength
+          display: flex
+          input
+            flex-grow: 1
+            margin: 0 .5em
+
+      .weaknesses-editor
+        display: flex
+        flex-direction: column
+        ul
+          display: flex
+          flex-direction: column
+          li
+            flex-grow: 1
+            margin-top: .5em
+            button
+              float: right
+
+        .newWeakness
+          display: flex
+          input
+            flex-grow: 1
+            margin: 0 .5em
+
+      .interest-editor
+        display: flex
+        flex-direction: column
+
+        .interest-control
+          display: flex
+          flex-direction: column
+          border: 1px solid $blue
+          padding: 1em
+          margin-bottom: 1em
+          img
+            width: 5em
+            margin: auto
+
+          ul
+            display: flex
+            flex-direction: column
+            li
+              flex-grow: 1
+              margin: 0 .5em
+              button
+                float: right
+        input
+          margin-top: .5em
+        button
+          margin-top: .5em
