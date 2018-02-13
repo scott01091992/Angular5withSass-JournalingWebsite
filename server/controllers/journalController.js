@@ -12,6 +12,15 @@ module.exports = (function(){
           res.json(entry);
         }
       })
+    },
+    upload: function(req, res) {
+          uploadJournal(req,res,function(err){
+              if(err){
+                   res.json({error_code:1,err_desc:err});
+                   return;
+              }
+               res.json({error_code:0,err_desc:null});
+        });
     }
   }
 })();

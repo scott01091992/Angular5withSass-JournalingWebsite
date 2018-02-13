@@ -11,18 +11,43 @@ app.use(express.static(path.join(__dirname,'./dist')));
 
 app.use(bodyParser.json());
 
-var storage = multer.diskStorage({ //multers disk storage settings
+var storageInterest = multer.diskStorage({ //multers disk storage settings
         destination: function (req, file, cb) {
-            cb(null, './src/assets/profile/');
+            cb(null, './src/assets/interests/');
         },
         filename: function (req, file, cb) {
-            var datetimestamp = Date.now();
-            cb(null, file.fieldname + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length -1]);
+            cb(null, file.originalname);
         }
     });
 
-upload = multer({ //multer settings
-                    storage: storage
+var storageJournal = multer.diskStorage({ //multers disk storage settings
+        destination: function (req, file, cb) {
+            cb(null, './src/assets/entryimgs/');
+        },
+        filename: function (req, file, cb) {
+            cb(null, file.originalname);
+        }
+    });
+
+var storageReview = multer.diskStorage({ //multers disk storage settings
+        destination: function (req, file, cb) {
+            cb(null, './src/assets/reviewimgs/');
+        },
+        filename: function (req, file, cb) {
+            cb(null, file.originalname);
+        }
+    });
+
+uploadInterest = multer({ //multer settings
+                    storage: storageInterest
+                }).single('file');
+
+uploadJournal = multer({ //multer settings
+                    storage: storageJournal
+                }).single('file');
+
+uploadReview = multer({ //multer settings
+                    storage: storageReview
                 }).single('file');
 
 require('./server/config/mongoose.js');

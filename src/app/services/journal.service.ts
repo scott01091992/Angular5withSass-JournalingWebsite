@@ -8,7 +8,6 @@ export class JournalService {
   constructor(private http: HttpClient) { }
 
   getLatestJournal() {
-    console.log('requesting data');
     return this.http.get('/latestJournal');
   }
 

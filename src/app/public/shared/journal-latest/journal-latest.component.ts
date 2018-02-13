@@ -15,7 +15,6 @@ export class JournalLatestComponent implements OnInit {
   ngOnInit() {
 
     this.journalService.getLatestJournal().subscribe(entry => {
-      console.log(entry);
       this.entry = entry;
     })
 

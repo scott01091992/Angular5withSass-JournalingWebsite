@@ -8,14 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
 
   profile = {
-    profilepic: "./../../../assets/profile/profilepic.png",
+    profilepic: "profilepic.png",
     about: {
-      name: ["Brandon Scott"],
-      dob: ["01/09/1992"],
-      location: ["Kent WA"],
-      description: ["I am an optimistic computer enthusiast who aspires to become a developer in order to exercise my interests in problem solving and code"],
-      values: ["Scientific Method", "The Golden Rule", "Mathematics", "Logic", "Enjoying Life"]
+      name: "Brandon Scott",
+      dob: "01/09/1992",
+      location: "Kent WA",
     },
+    description: "I am an optimistic computer enthusiast who aspires to become a developer in order to exercise my interests in problem solving and code",
+    values: ["Scientific Method", "The Golden Rule", "Mathematics", "Logic", "Enjoying Life"],
     goals: {
       primary: [
         "Get hired as a Developer"
@@ -54,7 +54,7 @@ export class ProfileComponent implements OnInit {
     ],
     interests: {
       optimization: {
-        imgpath: "./../../../../assets/static/optimizationicon.svg",
+        imgpath: "./../../../../assets/interests/optimizationicon.svg",
         list: [
           "Productivity",
           "Game Theory",
@@ -66,7 +66,7 @@ export class ProfileComponent implements OnInit {
       }
       ,
       design: {
-        imgpath: "./../../../../assets/static/designicon.svg",
+        imgpath: "./../../../../assets/interests/designicon.svg",
         list: [
           "User Experience",
           "Logo Design",
@@ -78,7 +78,7 @@ export class ProfileComponent implements OnInit {
         ]
       },
       development: {
-        imgpath: "./../../../../assets/static/developmenticon.svg",
+        imgpath: "./../../../../assets/interests/developmenticon.svg",
         list: [
           "Angular Frameworks",
           "EMCA",
@@ -92,7 +92,7 @@ export class ProfileComponent implements OnInit {
         ]
       },
       gaming: {
-        imgpath: "./../../../../assets/static/gamingicon.svg",
+        imgpath: "./../../../../assets/interests/gamingicon.svg",
         list: [
           "Theory Crafting",
           "Macro Competitive Strategy",
@@ -103,7 +103,7 @@ export class ProfileComponent implements OnInit {
         ]
       },
       science: {
-        imgpath: "./../../../../assets/static/scienceicon.svg",
+        imgpath: "./../../../../assets/interests/scienceicon.svg",
         list: [
           "Physics",
           "Quantum Physics",
@@ -119,7 +119,7 @@ export class ProfileComponent implements OnInit {
         ]
       },
       investigation: {
-        imgpath: "./../../../../assets/static/investigationicon.svg",
+        imgpath: "./../../../../assets/interests/investigationicon.svg",
         list: [
           "Observation",
           "Detailed Note Taking",
@@ -132,7 +132,7 @@ export class ProfileComponent implements OnInit {
         ]
       },
       miscellaneous: {
-        imgpath: "./../../../../assets/static/miscellaneousicon.svg",
+        imgpath: "./../../../../assets/interests/miscellaneousicon.svg",
         list: [
           "Cooking",
           "Meditation",

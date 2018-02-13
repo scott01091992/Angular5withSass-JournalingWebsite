@@ -2,7 +2,7 @@
 <div class='profile-container'>
   <div class='main-content'>
     <div class='profile-row'>
-      <div class='profile-pic' [ngStyle]="{'background-image': 'url('+profile.profilepic+')'}"></div>
+      <div class='profile-pic' [ngStyle]="{'background-image': 'url(./../../../assets/profile/'+profile.profilepic+')'}"></div>
       <div class='profile-about'>
         <h2 class='profile-heading'>About</h2>
         <div class='profile-about-content'>
@@ -21,7 +21,7 @@
         <h2 class='profile-heading'>Interests</h2>
         <div class='interests-container'>
           <div class='interest-box' *ngFor="let interest of profile.interests | mapObject">
-            <img class='interest-icon' src="{{profile.interests[interest].imgpath}}">
+            <img class='interest-icon' src="./../../../../assets/interests/{{profile.interests[interest].imgpath}}">
             <h3>{{interest}}</h3>
             <ul>
               <li *ngFor="let data of profile.interests[interest].list">{{data}}</li>

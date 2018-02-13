@@ -10,6 +10,16 @@ module.exports = (function(){
           res.json(review);
         }
       })
+    },
+    upload: function(req, res) {
+          uploadReview(req,res,function(err){
+              console.log(req.file);
+              if(err){
+                   res.json({error_code:1,err_desc:err});
+                   return;
+              }
+               res.json({error_code:0,err_desc:null});
+        });
     }
   }
 })();
