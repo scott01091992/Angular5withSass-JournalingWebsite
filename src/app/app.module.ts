@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { FileSelectDirective , FileDropDirective} from 'ng2-file-upload';
+
 import { JournalService } from './services/journal.service';
 import { ReviewService } from './services/review.service';
 import { ProfileService } from './services/profile.service';
@@ -65,6 +67,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    FileSelectDirective,
     HeaderComponent,
     FooterComponent,
     JournalLatestComponent,

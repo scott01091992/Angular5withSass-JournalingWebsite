@@ -78,10 +78,10 @@
           </ul>
           <label>New Interest</label>
           <input type='text'>
-          <button (click)="addInterest()">Add Interest</button>
+          <button (click)="addInterest($event, interestName)">Add Interest</button>
           <label>Change Image</label>
-          <input type="file">
-          <button>Save Img</button>
+          <input type="file" name="single" ng2FileSelect [uploader]="uploader" />
+          <button (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">Change Img</button>
           <button>Remove Catagory</button>
         </div>
         <hr>

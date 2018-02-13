@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FileUploader } from 'ng2-file-upload';
 
 @Component({
   selector: 'app-profile-editor',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-editor.component.sass']
 })
 export class ProfileEditorComponent implements OnInit {
+
+  public uploader:FileUploader = new FileUploader({url:'/upload'});
 
   profile = {
     profilepic: "./../../../assets/profile/profilepic.png",
@@ -158,6 +161,7 @@ export class ProfileEditorComponent implements OnInit {
   newGoal = "";
   newStrength = "";
   newWeakness = "";
+  newInterests = [];
 
   interestModel = [];
 
@@ -222,6 +226,20 @@ export class ProfileEditorComponent implements OnInit {
   addWeakness = (weakness) => {
     this.profile.weaknesses.push(weakness);
     this.newWeakness = "";
+  }
+
+  removeInterest = (interest, idx) => {
+    this.profile.interests[interest].list.splice(idx, 1);
+  }
+
+  addInterest = (e, interestName) => {
+    console.log(e);
+    this.profile.interests[interestName].list.push(e.target.previousElementSibling.value);
+    e.target.previousElementSibling.value = "";
+  }
+
+  changeImg = (e) => {
+    console.log(e);
   }
 
   constructor() { }
