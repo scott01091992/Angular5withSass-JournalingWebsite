@@ -11,43 +11,17 @@ app.use(express.static(path.join(__dirname,'./dist')));
 
 app.use(bodyParser.json());
 
-var storageInterest = multer.diskStorage({ //multers disk storage settings
+var storage = multer.diskStorage({ //multers disk storage settings
         destination: function (req, file, cb) {
-            cb(null, './src/assets/interests/');
+            cb(null, './server/images/');
         },
         filename: function (req, file, cb) {
             cb(null, file.originalname);
         }
     });
 
-var storageJournal = multer.diskStorage({ //multers disk storage settings
-        destination: function (req, file, cb) {
-            cb(null, './src/assets/entryimgs/');
-        },
-        filename: function (req, file, cb) {
-            cb(null, file.originalname);
-        }
-    });
-
-var storageReview = multer.diskStorage({ //multers disk storage settings
-        destination: function (req, file, cb) {
-            cb(null, './src/assets/reviewimgs/');
-        },
-        filename: function (req, file, cb) {
-            cb(null, file.originalname);
-        }
-    });
-
-uploadInterest = multer({ //multer settings
-                    storage: storageInterest
-                }).single('file');
-
-uploadJournal = multer({ //multer settings
-                    storage: storageJournal
-                }).single('file');
-
-uploadReview = multer({ //multer settings
-                    storage: storageReview
+upload = multer({ //multer settings
+                    storage: storage
                 }).single('file');
 
 require('./server/config/mongoose.js');

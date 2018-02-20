@@ -1,3 +1,92 @@
-<p>
-  journal-editor works!
-</p>
+<div class="journal-editor-container">
+  <h1>Journal Editor</h1>
+  <div class="journal-editor">
+    <div class="side-bar">
+      <div class="editer-control">
+        <label>Title</label>
+        <input type='text' [disabled]="editToggle.title == false" [value]="entry.title">
+        <button *ngIf="editToggle.title == false" (click)="editToggle.title = true">Edit</button>
+        <button *ngIf="editToggle.title == true" (click)="saveData($event, 'title'); editToggle.title = false">Save</button>
+      </div>
+      <div class="editer-control">
+        <label>Date</label>
+        <input type='date' [value]="entry.date">
+        <button (click)="saveData($event, 'date')">Save</button>
+      </div>
+      <div class="editer-control">
+        <label>Productivity</label>
+        <select>
+          <option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]" [selected]="entry.productivity == i">{{i}}</option>
+        </select>
+        <button (click)="saveData($event, 'productivity')">Save</button>
+      </div>
+      <div class="editer-control">
+        <label>Goal</label>
+        <input type='text' [disabled]="editToggle.goal == false" [value]="entry.goal">
+        <button *ngIf="editToggle.goal == false" (click)="editToggle.goal = true">Edit</button>
+        <button *ngIf="editToggle.goal == true" (click)="saveData($event, 'goal'); editToggle.goal = false">Save</button>
+      </div>
+      <div class="editer-control">
+        <label>Learned</label>
+        <input type='text' [value]="entry.learned">
+        <button *ngIf="editToggle.learned == false" (click)="editToggle.learned = true">Edit</button>
+        <button *ngIf="editToggle.learned == true" (click)="saveData($event, 'learned'); editToggle.learned = false">Save</button>
+      </div>
+      <div class="editer-control">
+        <label>Img</label>
+        <input type='file' name="single" ng2FileSelect [uploader]="uploader">
+        <button (click)="uploader.uploadAll()">Save</button>
+      </div>
+      <div class="editer-control">
+        <label>Thoughts</label>
+        <input type='text' [value]="entry.thoughts">
+        <button *ngIf="editToggle.thoughts == false" (click)="editToggle.thoughts = true">Edit</button>
+        <button *ngIf="editToggle.thoughts == true" (click)="saveData($event, 'thoughts'); editToggle.thoughts = false">Save</button>
+      </div>
+      <div class="editer-control">
+        <label>Emotion</label>
+        <select>
+          <option value="./../../../../assets/static/angry.png">Angry Face</option>
+          <option value="./../../../../assets/static/blah.png">Blah Face</option>
+          <option value="./../../../../assets/static/bliss.png">Bliss Face</option>
+          <option value="./../../../../assets/static/depressed.png">Depressed Face</option>
+          <option value="./../../../../assets/static/fun.png">Fun Face</option>
+          <option value="./../../../../assets/static/happy.png">Happy Face</option>
+          <option value="./../../../../assets/static/sad.png">Sad Face</option>
+          <option value="./../../../../assets/static/silly.png">Silly Face</option>
+          <option value="./../../../../assets/static/unhappy.png">Unhappy Face</option>
+        </select>
+        <button (click)="saveData($event, 'emotionimg')">Save</button>
+        <input type='text' [value]="entry.emotion" [disabled]="editToggle.emotion == false">
+        <button *ngIf="editToggle.emotion == false" (click)="editToggle.emotion = true">Edit</button>
+        <button *ngIf="editToggle.emotion == true" (click)="saveData($event, 'emotion'); editToggle.emotion = false">Save</button>
+      </div>
+      <div class="editer-control">
+        <label>Tags</label>
+        <ul>
+          <li *ngFor="let tag of entry.tags; let i = index">
+            {{tag}}
+            <button (click)="removeTag(i)">Remove</button>
+          </li>
+        </ul>
+        <input type='text'>
+        <button (click)="addTag($event)">Add Tag</button>
+      </div>
+    </div>
+    <div class='main-bar'>
+      <div class="journal-preview">
+        <h2>Preview</h2>
+        <app-journal-preview [entry]="entry"></app-journal-preview>
+      </div>
+      <div class="content-control">
+        <label>Content</label>
+        <textarea [innerHTML]="entry.content | toParagraph" [disabled]="editToggle.content == false"></textarea>
+        <button *ngIf="editToggle.content == false" (click)="editToggle.content = true">Edit</button>
+        <button *ngIf="editToggle.content == true" (click)="saveContent($event); editToggle.content = false">Save</button>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

@@ -14,7 +14,7 @@ module.exports = (function(){
       })
     },
     upload: function(req, res) {
-          uploadJournal(req,res,function(err){
+          upload(req,res,function(err){
               if(err){
                    res.json({error_code:1,err_desc:err});
                    return;

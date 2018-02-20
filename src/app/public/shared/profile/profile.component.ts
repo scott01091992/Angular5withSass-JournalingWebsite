@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
 
   profile = {
-    profilepic: "profilepic.png",
+    imgpath: "profilepic.png",
     about: {
       name: "Brandon Scott",
       dob: "01/09/1992",

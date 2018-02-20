@@ -1,0 +1,53 @@
+@import "~assets/variables"
+@import "~assets/editorCommon"
+
+h2
+  font-family: $subheader-font
+
+.journal-editor-container
+    padding: 1em
+    .journal-editor
+      display: flex
+      flex-direction: row
+      .side-bar
+        display: flex
+        flex-direction: column
+        flex-grow: 1
+        .editer-control
+          display: flex
+          flex-direction: column
+          margin-bottom: 1em
+          label
+            margin-bottom: .5em
+          button
+            margin-top: .5em
+            margin-left: auto
+            width: 50%
+          input
+            flex-grow: 1
+          select
+            flex-grow: 1
+          ul
+            display: flex
+            flex-direction: column
+            li
+              flex-grow: 1
+              button
+                float: right
+                width: auto
+
+
+      .main-bar
+        display: flex
+        flex-direction: column
+        flex-grow: 3
+        .journal-preview
+          h2
+            text-align: center
+        .content-control
+          display: flex
+          flex-direction: column
+          textarea
+            flex-grow: 1
+            height: 30em
+            padding: 1em

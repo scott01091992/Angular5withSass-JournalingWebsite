@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './public/shared/header/header.component';
 import { FooterComponent } from './public/shared/footer/footer.component';
 import { JournalLatestComponent } from './public/shared/journal-latest/journal-latest.component';
+import { JournalPreviewComponent } from './admin/components/journal-preview/journal-preview.component';
 import { JournalRecentComponent } from './public/shared/journal-recent/journal-recent.component';
 import { TimelineComponent } from './public/shared/timeline/timeline.component';
 import { ObjectivesComponent } from './public/shared/objectives/objectives.component';
@@ -33,6 +34,8 @@ import { CmsHeaderComponent } from './admin/components/cms-header/cms-header.com
 import { ProfileEditorComponent } from './admin/components/profile-editor/profile-editor.component';
 import { JournalEditorComponent } from './admin/components/journal-editor/journal-editor.component';
 import { ReviewEditorComponent } from './admin/components/review-editor/review-editor.component';
+import { DateFormatPipe } from './pipes/date-format.pipe';
+import { ToParagraphPipe } from './pipes/to-paragraph.pipe';
 
 const appRoutes: Routes = [
   {
@@ -71,6 +74,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     JournalLatestComponent,
+    JournalPreviewComponent,
     JournalRecentComponent,
     TimelineComponent,
     ObjectivesComponent,
@@ -89,7 +93,9 @@ const appRoutes: Routes = [
     CmsHeaderComponent,
     ProfileEditorComponent,
     JournalEditorComponent,
-    ReviewEditorComponent
+    ReviewEditorComponent,
+    DateFormatPipe,
+    ToParagraphPipe
   ],
   imports: [
     BrowserModule,

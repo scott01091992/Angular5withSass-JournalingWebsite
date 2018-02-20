@@ -1,15 +1,15 @@
-<div class="journal-latest">
-  <h1 class='journal-latest-header'>Latest Journal Entry</h1>
-  <div *ngIf="entry != null" class='journal-latest-entry'>
-    <div class='journal-latest-head'>
+<div class="journal-preview">
+  <h1 class='journal-preview-header'>Journal Entry</h1>
+  <div *ngIf="entry != null" class='journal-preview-entry'>
+    <div class='journal-preview-head'>
       <div class='journal-img-background' [ngStyle]="{'background-image': 'url('+entry.imgpath+')'}">
       </div>
       <h2>{{entry.title}}</h2>
       <h3>{{entry.date | dateFormat}}</h3>
     </div>
-    <div class='journal-latest-content'>
+    <div class='journal-preview-content'>
       <p class='journal-content-paragraphs' *ngFor="let para of entry.content">{{para}}</p>
-      <div class='journal-latest-details'>
+      <div class='journal-preview-details'>
         <p>
           <span class='content-bolden'>Goal of the Day: </span>
           {{entry.goal}}
@@ -30,7 +30,7 @@
           <span class='content-bolden'>Emotion of the Day: </span>
           {{entry.emotion}} <img class='emotion-icon' [src]="entry.emotionimg">
         </p>
-        <span class='journal-latest-tags'>
+        <span class='journal-preview-tags'>
           <span class='content-bolden'>Tags: </span>
           <ul>
             <li *ngFor="let tag of entry.tags">{{tag}}</li>
