@@ -1,5 +1,6 @@
 //modules
 const express = require('express');
+fs = require('fs');
 mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -32,6 +33,8 @@ require('./server/config/routes.js')(app);
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
+
+
 
 app.listen(6789, function(){
  console.log("listening on port 6789");

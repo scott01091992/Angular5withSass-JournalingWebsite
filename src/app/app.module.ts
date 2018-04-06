@@ -36,6 +36,7 @@ import { JournalEditorComponent } from './admin/components/journal-editor/journa
 import { ReviewEditorComponent } from './admin/components/review-editor/review-editor.component';
 import { DateFormatPipe } from './pipes/date-format.pipe';
 import { ToParagraphPipe } from './pipes/to-paragraph.pipe';
+import { ReviewPreviewComponent } from './admin/components/review-preview/review-preview.component';
 
 const appRoutes: Routes = [
   {
@@ -47,9 +48,16 @@ const appRoutes: Routes = [
     component: JournalpageComponent
   },
   {
+    path: 'journal/:id',
+    component: JournalpageComponent
+  },
+  {
     path: 'reviews',
-    component: ReviewpageComponent,
-    data: { title: 'Heroes List' }
+    component: ReviewpageComponent
+  },
+  {
+    path: 'reviews/:id',
+    component: ReviewpageComponent
   },
   {
     path: 'profile',
@@ -95,7 +103,8 @@ const appRoutes: Routes = [
     JournalEditorComponent,
     ReviewEditorComponent,
     DateFormatPipe,
-    ToParagraphPipe
+    ToParagraphPipe,
+    ReviewPreviewComponent
   ],
   imports: [
     BrowserModule,

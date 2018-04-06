@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JournalService } from './../../../services/journal.service';
 
 @Component({
   selector: 'app-timeline',
@@ -7,19 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimelineComponent implements OnInit {
 
-  timeline = [
-    {productivity: 7, date: "01/09"},
-    {productivity: 4, date: "01/10"},
-    {productivity: 5, date: "01/11"},
-    {productivity: 9, date: "01/12"},
-    {productivity: 6, date: "01/13"},
-    {productivity: 7, date: "01/14"},
-    {productivity: 4, date: "01/15"}
-  ]
+  timeline = null;
 
-  constructor() { }
+  constructor(private journalService: JournalService) { }
 
   ngOnInit() {
+    this.journalService.getTimeline().subscribe(timeline => {
+      if(timeline){
+        console.log(timeline);
+        this.timeline = timeline;
+      }else{
+        this.timeline = {
+          productivity: 1,
+          date: "2018-02-02"
+        }
+      }
+    })
   }
 
 }

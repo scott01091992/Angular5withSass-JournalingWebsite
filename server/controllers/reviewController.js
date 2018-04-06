@@ -12,14 +12,51 @@ module.exports = (function(){
       })
     },
     upload: function(req, res) {
-          uploadReview(req,res,function(err){
-              console.log(req.file);
-              if(err){
-                   res.json({error_code:1,err_desc:err});
-                   return;
-              }
-               res.json({error_code:0,err_desc:null});
-        });
+      upload(req,res,function(err){
+        if(err){
+             res.json({error_code:1,err_desc:err});
+             return;
+        }else{
+          var rev = new review(JSON.parse(req.body.data));
+          rev.img.fileName = req.file.originalname;
+          rev.img.contentType = "image/jpg";
+          rev.img.data = fs.readFileSync("./server/Images/"+req.file.originalname)
+          rev.save(function(err, rev){
+            if(err){
+              console.log(err);
+            }else{
+              console.log("Saved Review");
+            }
+          })
+        }
+      })
+    },
+    recent: function(req, res){
+      review.find({}, 'title date').sort({'date': -1}).limit(8).exec(function(err, reviews){
+        if(err){
+          console.log(err);
+        }else{
+          res.json(reviews);
+        }
+      })
+    },
+    all: function(req, res){
+      review.find({}, 'title img').sort({'date': -1}).limit(20).exec(function(err, reviews){
+        if(err){
+          console.log(err);
+        }else{
+          res.json(reviews);
+        }
+      })
+    },
+    review: function(req, res){
+      review.findById(req.params.id, function(err, review){
+        if(err){
+          console.log(err);
+        }else{
+          res.json(review);
+        }
+      })
     }
   }
 })();

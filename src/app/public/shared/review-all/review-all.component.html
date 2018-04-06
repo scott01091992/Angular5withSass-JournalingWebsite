@@ -1,8 +1,9 @@
 <h1 class='all-review-header'>All Reviews</h1>
 <div class='all-review-box'>
-  <div class='review-thumbnail' *ngFor="let thumbnail of reviewThumbnails">
-    <div class='review-img' [ngStyle]="{'background-image': 'url('+thumbnail.imgpath+')'}">
+  <div class='review-thumbnail' *ngFor="let review of reviews">
+    <div class='review-img' (click)="navigateToReview(review._id)">
+      <img [src]="domSanitizer.bypassSecurityTrustUrl(review.img.data.data)">
     </div>
-    <span class='review-title'>{{thumbnail.title}}</span>
+    <span class='review-title'>{{review.title}}</span>
   </div>
 </div>

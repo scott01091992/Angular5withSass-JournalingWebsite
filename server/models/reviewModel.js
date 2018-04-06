@@ -9,7 +9,11 @@ var reviewSchema = new mongoose.Schema({
   _pros: [String],
   _cons: [String],
   recommended: String,
-  imgpath: String
+  img: {
+    data: Buffer,
+    fileName: String,
+    contentType: String 
+  }
 }, {timestamps: true});
 
 mongoose.model('Review', reviewSchema);

@@ -1,3 +1,84 @@
-<p>
-  review-editor works!
-</p>
+<div class="review-editor-container">
+  <h1>Review Editor</h1>
+  <div class="review-editor" *ngIf="review != null">
+    <div class="side-bar">
+      <div class="editer-control">
+        <label>Title</label>
+        <input type='text' [disabled]="editToggle.title == false" [value]="review.title">
+        <button *ngIf="editToggle.title == false" (click)="editToggle.title = true">Edit</button>
+        <button *ngIf="editToggle.title == true" (click)="saveData($event, 'title'); editToggle.title = false">Save</button>
+      </div>
+      <div class="editer-control">
+        <label>Date</label>
+        <input type='date' [value]="review.date">
+        <button (click)="saveData($event, 'date')">Save</button>
+      </div>
+      <div class="editer-control">
+        <label>Rating</label>
+        <select>
+          <option *ngFor="let i of [5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100]" [selected]="review.rating == i">{{i}}</option>
+        </select>
+        <button (click)="saveData($event, 'rating')">Save</button>
+      </div>
+      <div class="editer-control">
+        <label>Recommended</label>
+        <input type='text' [disabled]="editToggle.recommended == false" [value]="review.recommended">
+        <button *ngIf="editToggle.recommended == false" (click)="editToggle.recommended = true">Edit</button>
+        <button *ngIf="editToggle.recommended == true" (click)="saveData($event, 'recommended'); editToggle.recommended = false">Save</button>
+      </div>
+      <div class="editer-control">
+        <label>Img</label>
+        <input type='file' name="single" ng2FileSelect [uploader]="uploader">
+      </div>
+      <div class="editer-control">
+        <label>Pros</label>
+        <ul>
+          <li *ngFor="let pro of review._pros; let i = index">
+            {{pro}}
+            <button (click)="removePro(i)">Remove</button>
+          </li>
+        </ul>
+        <input type='text'>
+        <button (click)="addPro($event)">Add Pro</button>
+      </div><div class="editer-control">
+        <label>Cons</label>
+        <ul>
+          <li *ngFor="let con of review._cons; let i = index">
+            {{con}}
+            <button (click)="removeCon(i)">Remove</button>
+          </li>
+        </ul>
+        <input type='text'>
+        <button (click)="addCon($event)">Add Con</button>
+      </div>
+      <div class="editer-control">
+        <label>Tags</label>
+        <ul>
+          <li *ngFor="let tag of review._tags; let i = index">
+            {{tag}}
+            <button (click)="removeTag(i)">Remove</button>
+          </li>
+        </ul>
+        <input type='text'>
+        <button (click)="addTag($event)">Add Tag</button>
+      </div>
+    </div>
+    <div class='main-bar'>
+      <div class="review-preview">
+        <h2>Preview</h2>
+        <app-review-preview [review]="review"></app-review-preview>
+      </div>
+      <div class="content-control">
+        <label>Content</label>
+        <textarea [innerHTML]="review.content | toParagraph" [disabled]="editToggle.content == false"></textarea>
+        <button *ngIf="editToggle.content == false" (click)="editToggle.content = true">Edit</button>
+        <button *ngIf="editToggle.content == true" (click)="saveContent($event); editToggle.content = false">Save</button>
+      </div>
+    </div>
+  </div>
+  <div class='uploader'>
+    <button (click)="uploadAndSave()" [disabled]="validEntry == false"> Upload and Save </button>
+  </div>
+
+
+</div>

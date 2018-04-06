@@ -11,4 +11,8 @@ export class ProfileService {
     return this.http.get('/userProfile');
   }
 
+  getObjectives() {
+    return this.http.get('/objectives');
+  }
+
 }

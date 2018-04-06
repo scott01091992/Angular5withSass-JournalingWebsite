@@ -7,8 +7,24 @@ export class JournalService {
 
   constructor(private http: HttpClient) { }
 
-  getLatestJournal() {
-    return this.http.get('/latestJournal');
+  getJournal(id) {
+    if(id){
+      return this.http.get('journal/'+id);
+    }else{
+      return this.http.get('latestJournal');
+    }
+  }
+
+  getRecentEntries() {
+    return this.http.get('/recentEntries');
+  }
+
+  getTimeline() {
+    return this.http.get('/timeline');
+  }
+
+  getCalendar() {
+    return this.http.get('/calendar');
   }
 
 }

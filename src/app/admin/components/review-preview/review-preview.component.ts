@@ -1,16 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { ReviewService } from './../../../services/review.service';
-
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-journal-preview',
-  templateUrl: './journal-preview.component.html',
-  styleUrls: ['./journal-preview.component.sass']
+  selector: 'app-review-preview',
+  templateUrl: './review-preview.component.html',
+  styleUrls: ['./review-preview.component.sass']
 })
-export class JournalPreviewComponent implements OnInit {
+export class ReviewPreviewComponent implements OnInit {
 
-  @Input('entry') entry;
+  @Input('review') review;
 
   base64Img = "";
 
@@ -27,11 +26,10 @@ export class JournalPreviewComponent implements OnInit {
       }
       return window.btoa( binary );
     }
-
-    let base64 = _arrayBufferToBase64(this.entry.img.data.data);
+    console.log(this.review);
+    let base64 = _arrayBufferToBase64(this.review.img.data.data);
 
     this.base64Img = "data:image/jpg;base64, " + base64;
 
   }
-
 }

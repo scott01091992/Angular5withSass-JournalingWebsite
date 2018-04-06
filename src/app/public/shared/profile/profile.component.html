@@ -1,16 +1,14 @@
 <h1>Profile</h1>
-<div class='profile-container'>
+<div class='profile-container' *ngIf="profile != null">
   <div class='main-content'>
     <div class='profile-row'>
-      <div class='profile-pic' [ngStyle]="{'background-image': 'url('+profile.imgpath+')'}"></div>
+      <div class='profile-pic' [ngStyle]="{'background-image': 'url(./../../../../assets/profile/'+profile.profilepic+')'}"></div>
       <div class='profile-about'>
         <h2 class='profile-heading'>About</h2>
         <div class='profile-about-content'>
-          <span *ngFor="let aboutdata of profile.about | mapObject">
-            <span class='bold-font'>{{aboutdata}}: </span>
-            <ul>
-              <li [ngClass]="{'isList': profile.about[aboutdata].length > 1, 'notList': profile.about[aboutdata].length == 1}" *ngFor="let details of profile.about[aboutdata]">{{details}}</li>
-            </ul>
+          <span class='about-data' *ngFor="let key of profile.about | mapObject">
+            <span class='bold-font'>{{key}} </span>
+            {{profile.about[key]}}
           </span>
         </div>
       </div>

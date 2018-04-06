@@ -2,7 +2,8 @@
   <h1 class='journal-latest-header'>Latest Journal Entry</h1>
   <div *ngIf="entry != null" class='journal-latest-entry'>
     <div class='journal-latest-head'>
-      <div class='journal-img-background' [ngStyle]="{'background-image': 'url('+entry.imgpath+')'}">
+      <div class='journal-img-background'>
+        <img [src]="domSanitizer.bypassSecurityTrustUrl(base64Img)">
       </div>
       <h2>{{entry.title}}</h2>
       <h3>{{entry.date | dateFormat}}</h3>
@@ -33,7 +34,7 @@
         <span class='journal-latest-tags'>
           <span class='content-bolden'>Tags: </span>
           <ul>
-            <li *ngFor="let tag of entry.tags">{{tag}}</li>
+            <li *ngFor="let tag of entry._tags">{{tag}}</li>
           </ul>
         </span>
       </div>

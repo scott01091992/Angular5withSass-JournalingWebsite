@@ -1,4 +1,4 @@
-<div class='calendar-container'>
+<div class='calendar-container' *ngIf="render === true">
   <h3>{{calendarObj.month}}</h3>
   <div class='calendar'>
     <div class='weekday-box'>
@@ -6,7 +6,7 @@
     </div>
     <div class='calendar-days-box'>
       <div class='day' *ngFor="let day of calendarObj.calendar">
-        <div class='box' [ngStyle]="calendarColor(day.isDay, day.hasEntry)">
+        <div class='box' [ngStyle]="calendarColor(day.isDay, day.hasEntry)" (click)="navigateToEntry(day.id)">
           {{day.dayNum}}
         </div>
       </div>

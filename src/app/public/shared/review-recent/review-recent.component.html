@@ -2,7 +2,7 @@
   <h1 class='review-recent-header'>Recent Reviews</h1>
   <div class='review-recent-reviews'>
     <ul>
-      <li *ngFor="let review of reviews">
+      <li *ngFor="let review of reviews" (click)="navigateToReview(review._id)">
         <span class='review-title'>{{review.title}}</span>
         <span class='review-date'>{{review.date}}</span>
       </li>

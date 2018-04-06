@@ -58,7 +58,57 @@ export class ProfileEditorComponent implements OnInit {
 
   ngOnInit() {
     this.profileService.getUserProfile().subscribe(profile => {
-      this.profile = profile;
+      if(profile){
+          this.profile = profile;
+      }else{
+        this.profile = {
+          profilepic: "",
+          about: {
+            name: "",
+            dob: "",
+            location: "",
+          },
+          description: "",
+          values: [""],
+          goals: {
+            primary: [""],
+            shortTerm: [""],
+            longTerm: [""]
+          },
+          weaknesses: [""],
+          strengths: [""],
+          interests: {
+            optimization: {
+              imgpath: "",
+              list: [""]
+            },
+            design: {
+              imgpath: "",
+              list: [""]
+            },
+            development: {
+              imgpath: "",
+              list: [""]
+            },
+            gaming: {
+              imgpath: "",
+              list: [""]
+            },
+            science: {
+              imgpath: "",
+              list: [""]
+            },
+            investigation: {
+              imgpath: "",
+              list: [""]
+            },
+            miscellaneous: {
+              imgpath: "",
+              list: [""]
+            }
+          }
+        }
+      }
     })
   }
 

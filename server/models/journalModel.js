@@ -5,7 +5,11 @@ var journalEntrySchema = new mongoose.Schema({
   productivity: String,
   goal: String,
   learned: String,
-  imgpath: String,
+  img: {
+    data: Buffer,
+    fileName: String,
+    contentType: String
+  },
   thoughts: String,
   emotion: String,
   emotionimg: String,

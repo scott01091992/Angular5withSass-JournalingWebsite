@@ -2,8 +2,10 @@
   <h1 class='journal-preview-header'>Journal Entry</h1>
   <div *ngIf="entry != null" class='journal-preview-entry'>
     <div class='journal-preview-head'>
-      <div class='journal-img-background' [ngStyle]="{'background-image': 'url('+entry.imgpath+')'}">
+      <div class='journal-img-background'>
+        <img [src]="domSanitizer.bypassSecurityTrustUrl(base64Img)">
       </div>
+
       <h2>{{entry.title}}</h2>
       <h3>{{entry.date | dateFormat}}</h3>
     </div>

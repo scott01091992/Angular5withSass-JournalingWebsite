@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ReviewService } from './../../../services/review.service';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-review-all',
@@ -7,22 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewAllComponent implements OnInit {
 
-  reviewThumbnails = [
-    {title: "Crysis", imgpath: "crysis.jpg"},
-    {title: "Deus Ex: Human Revolution", imgpath: "deusexhr.jpg"},
-    {title: "Diablo 3", img: "diablo3.jpg"},
-    {title: "John Wick 2", imgpath: "johnwick2.jpg"},
-    {title: "Pirates of the Caribbean", imgpath: "piratesofthecarribbean.jpg"},
-    {title: "Starcraft 2", imgpath: "starcraft2.jpg"},
-    {title: "The Shining", imgpath: "theshining.jpg"},
-    {title: "Titanfall", imgpath: "titanfall.jpg"},
-    {title: "World War Z", imgpath: "worldwarz.jpg"},
-    {title: "XCOM 2", imgpath: "xcom2.jpg"}
-  ]
+  reviews = null;
 
-  constructor() { }
+  navigateToReview = (id) => {
+    if(id){
+      this.router.navigate(['/reviews', id]);
+    }
+  };
+
+  constructor(private reviewService: ReviewService, private domSanitizer: DomSanitizer, private router: Router) {
+   }
 
   ngOnInit() {
+    function _arrayBufferToBase64( buffer ) {
+      var binary = '';
+      var bytes = new Uint8Array( buffer );
+      var len = bytes.byteLength;
+      for (var i = 0; i < len; i++) {
+          binary += String.fromCharCode( bytes[ i ] );
+      }
+      return window.btoa( binary );
+    }
+
+    this.reviewService.getAllReviews().subscribe(reviews => {
+      this.reviews = reviews;
+      for(let i = 0; i < this.reviews.length; i++){
+        let base64 = _arrayBufferToBase64(this.reviews[i].img.data.data);
+        this.reviews[i].img.data.data = "data:image/jpg;base64, " + base64;
+      }
+    });
+
   }
 
 }

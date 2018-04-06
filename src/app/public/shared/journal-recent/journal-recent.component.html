@@ -2,9 +2,9 @@
   <h1 class='journal-recent-header'>Recent Entries</h1>
   <div class='journal-recent-entries'>
     <ul>
-      <li *ngFor="let entry of entries">
+      <li *ngFor="let entry of entries" (click)="navigateToJournal(entry._id)">
         <span class='entry-title'>{{entry.title}}</span>
-        <span class='entry-date'>{{entry.date}}</span>
+        <span class='entry-date'>{{entry.date | dateFormat}}</span>
       </li>
     </ul>
   </div>

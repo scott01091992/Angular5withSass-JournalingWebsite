@@ -7,8 +7,20 @@ export class ReviewService {
 
   constructor(private http: HttpClient) { }
 
-  getLatestReview() {
-    return this.http.get('/latestReview');
+  getReview(id) {
+    if(id){
+      return this.http.get('review/'+id);
+    }else{
+      return this.http.get('latestReview');
+    }
+  }
+
+  getRecentReviews() {
+    return this.http.get('/recentReviews');
+  }
+
+  getAllReviews() {
+    return this.http.get('/allReviews');
   }
 
 }

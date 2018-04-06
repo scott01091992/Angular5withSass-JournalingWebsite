@@ -1,6 +1,6 @@
 <div class="journal-editor-container">
   <h1>Journal Editor</h1>
-  <div class="journal-editor">
+  <div class="journal-editor" *ngIf="entry != null">
     <div class="side-bar">
       <div class="editer-control">
         <label>Title</label>
@@ -28,18 +28,17 @@
       </div>
       <div class="editer-control">
         <label>Learned</label>
-        <input type='text' [value]="entry.learned">
+        <input type='text' [value]="entry.learned" [disabled]="editToggle.learned == false">
         <button *ngIf="editToggle.learned == false" (click)="editToggle.learned = true">Edit</button>
         <button *ngIf="editToggle.learned == true" (click)="saveData($event, 'learned'); editToggle.learned = false">Save</button>
       </div>
       <div class="editer-control">
         <label>Img</label>
         <input type='file' name="single" ng2FileSelect [uploader]="uploader">
-        <button (click)="uploader.uploadAll()">Save</button>
       </div>
       <div class="editer-control">
         <label>Thoughts</label>
-        <input type='text' [value]="entry.thoughts">
+        <input type='text' [value]="entry.thoughts" [disabled]="editToggle.thoughts == false">
         <button *ngIf="editToggle.thoughts == false" (click)="editToggle.thoughts = true">Edit</button>
         <button *ngIf="editToggle.thoughts == true" (click)="saveData($event, 'thoughts'); editToggle.thoughts = false">Save</button>
       </div>
@@ -64,7 +63,7 @@
       <div class="editer-control">
         <label>Tags</label>
         <ul>
-          <li *ngFor="let tag of entry.tags; let i = index">
+          <li *ngFor="let tag of entry._tags; let i = index">
             {{tag}}
             <button (click)="removeTag(i)">Remove</button>
           </li>
@@ -85,7 +84,9 @@
         <button *ngIf="editToggle.content == true" (click)="saveContent($event); editToggle.content = false">Save</button>
       </div>
     </div>
-
+  </div>
+  <div class='uploader'>
+    <button (click)="uploadAndSave()" [disabled]="validEntry == false"> Upload and Save </button>
   </div>
 
 
