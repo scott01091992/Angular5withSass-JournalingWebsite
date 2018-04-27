@@ -12,7 +12,7 @@ module.exports = function(app){
   app.get('/timeline', journalEntry.timeline);
   app.get('/objectives', profile.objectives);
   app.get('/recentReviews', review.recent);
-  app.get('/calendar', journalEntry.calendar);
+  app.get('/calendar/:id', journalEntry.calendar);
   app.get('/allReviews', review.all);
   app.get('/journal/:id', journalEntry.journal);
   app.get('/review/:id', review.review);

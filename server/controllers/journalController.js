@@ -50,7 +50,10 @@ module.exports = (function(){
       })
     },
     calendar: function(req, res){
-      journalEntry.find({}, 'date').sort({'date': -1}).limit(32).exec(function(err, cal){
+      console.log(req.params.id);
+      journalEntry.find(
+        {"date": {"$regex": req.params.id, "$options": "i"}}
+      ).sort({'date': -1}).limit(32).exec(function(err, cal){
         if(err){
           console.log(err);
         }else{

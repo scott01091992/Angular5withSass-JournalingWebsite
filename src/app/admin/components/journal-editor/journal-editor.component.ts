@@ -55,7 +55,6 @@ export class JournalEditorComponent implements OnInit {
     this.uploader.onBuildItemForm = (fileItem: any, form: any) => { if (this.entry) form.append('data', JSON.stringify(this.entry)); }
 
     this.route.params.subscribe(params => {
-      console.log(params);
       this.journalService.getJournal(params['id']).subscribe(entry => {
         if(entry){
           this.entry = entry;

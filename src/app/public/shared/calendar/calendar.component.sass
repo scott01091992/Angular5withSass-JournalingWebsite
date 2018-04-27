@@ -1,12 +1,39 @@
 @import "~assets/variables"
 
+.hoverCursor
+  cursor: pointer
+
 .calendar-container
   width: 22em
-
-  h3
-    font-family: $journal-content-bold
-    text-align: center
-    margin-top: 2em
+  .cal-select
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    .cal-nav-previous
+      background-image: url('./../../../../assets/static/previous.png')
+      height: 1em
+      width: 1em
+      background-repeat: no-repeat
+      background-size: contain
+      margin-top: 1em
+      padding: .1em
+      cursor: pointer
+    h3
+      font-family: $journal-content-bold
+      text-align: center
+      margin-top: 2em
+      padding-left: 1em
+      padding-right: 1em
+    .cal-nav-next
+      background-image: url('./../../../../assets/static/next.png')
+      height: 1em
+      width: 1em
+      background-repeat: no-repeat
+      background-size: contain
+      margin-top: 1em
+      padding: .1em
+      cursor: pointer
   .calendar
     .weekday-box
       display: flex

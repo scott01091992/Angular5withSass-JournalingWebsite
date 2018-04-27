@@ -1,12 +1,16 @@
 <div class='calendar-container' *ngIf="render === true">
-  <h3>{{calendarObj.month}}</h3>
+  <div class="cal-select">
+    <div class='cal-nav-previous' (click)="previousMonth()"></div>
+    <h3>{{calendarObj.month}} {{calendarObj.year}}</h3>
+    <div class='cal-nav-next' (click)="nextMonth()"></div>
+  </div>
   <div class='calendar'>
     <div class='weekday-box'>
       <div class='weekday-name' *ngFor="let day of ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']">{{day}}</div>
     </div>
     <div class='calendar-days-box'>
       <div class='day' *ngFor="let day of calendarObj.calendar">
-        <div class='box' [ngStyle]="calendarColor(day.isDay, day.hasEntry)" (click)="navigateToEntry(day.id)">
+        <div class='box' [ngClass]="{'hoverCursor': day.hasEntry}" [ngStyle]="calendarColor(day.isDay, day.hasEntry)" (click)="navigateToEntry(day.id)">
           {{day.dayNum}}
         </div>
       </div>

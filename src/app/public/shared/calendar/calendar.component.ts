@@ -16,6 +16,7 @@ let createCalendar = (moment, entries) => {
   let convertedEntries = createDateArr(entries);
   let calendarObj = {
     month: moment.format("MMMM"),
+    year: moment.format("YYYY"),
     calendar: []
   };
   //add empty precursor days
@@ -52,6 +53,7 @@ let createCalendar = (moment, entries) => {
 export class CalendarComponent implements OnInit {
 
   calendarObj;
+  calDate;
   calendarColor;
   render = false;
 
@@ -60,6 +62,36 @@ export class CalendarComponent implements OnInit {
       this.router.navigate(['/journal', id]);
     }
   };
+
+  nextMonth = () => {
+    this.calDate.add(1, 'month');
+    let month = this.calDate.format("MM");
+    let year = this.calDate.format("YYYY");
+    this.journalService.getCalendar(month, year).subscribe(cal => {
+      console.log(cal);
+      if(cal){
+        this.calendarObj = createCalendar(this.calDate , cal);
+        this.render = true;
+      }else{
+        this.calendarObj = createCalendar(this.calDate , []);
+      }
+    })
+  }
+
+  previousMonth = () => {
+    this.calDate.subtract(1, 'month');
+    let month = this.calDate.format("MM");
+    let year = this.calDate.format("YYYY");
+    this.journalService.getCalendar(month, year).subscribe(cal => {
+      console.log(cal);
+      if(cal){
+        this.calendarObj = createCalendar(this.calDate, cal);
+        this.render = true;
+      }else{
+        this.calendarObj = createCalendar(this.calDate, []);
+      }
+    })
+  }
 
   constructor(private journalService: JournalService, private router: Router) {
     this.calendarColor = (dayConditional: boolean, entryConditional: boolean) => {
@@ -74,12 +106,16 @@ export class CalendarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.journalService.getCalendar().subscribe(cal => {
+    this.calDate = moment();
+    let month = this.calDate.format("MM");
+    let year = this.calDate.format("YYYY");
+    console.log(this.calDate);
+    this.journalService.getCalendar(month, year).subscribe(cal => {
       if(cal){
-        this.calendarObj = createCalendar(moment(), cal);
+        this.calendarObj = createCalendar(this.calDate, cal);
         this.render = true;
       }else{
-        this.calendarObj = createCalendar(moment(), []);
+        this.calendarObj = createCalendar(this.calDate, []);
       }
     })
   }

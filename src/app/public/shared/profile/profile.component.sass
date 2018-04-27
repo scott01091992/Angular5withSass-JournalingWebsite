@@ -1,5 +1,6 @@
 @import "~assets/variables"
 
+
 h1
   font-family: $profile-title-font
   text-align: center
@@ -61,7 +62,7 @@ h1
           justify-content: center
           .interest-box
             margin: .5em
-            padding: 2 em
+            padding: 2em
             background-color: $orangeRGBA
             border-radius: 5px
             width: 20%
@@ -109,3 +110,17 @@ h1
     .profile-weaknesses
       padding: 1em
       height: 100%
+
+@media only screen and ( max-width: 1360px )
+
+  .profile-container
+    flex-direction: column
+
+@media only screen and ( max-width: 760px )
+  .profile-container
+    .main-content
+      .profile-row
+        .profile-interests
+          .interests-container
+            .interest-box
+              width: 100%

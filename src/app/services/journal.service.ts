@@ -23,8 +23,8 @@ export class JournalService {
     return this.http.get('/timeline');
   }
 
-  getCalendar() {
-    return this.http.get('/calendar');
+  getCalendar(month, year) {
+    return this.http.get('/calendar/'+year+'-'+month);
   }
 
 }

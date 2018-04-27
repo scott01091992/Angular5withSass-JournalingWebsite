@@ -55,6 +55,14 @@
           position: relative
 
           .timeline-date
-              position: absolute
-              top: 25%
-              left: 1%
+            position: absolute
+            top: 25%
+            left: 1%
+
+@media only screen and (max-width: 1000px)
+  .fullDate
+    display: none
+
+@media only screen and (min-width: 1000px)
+  .shortDate
+    display: none

@@ -37,6 +37,8 @@ import { ReviewEditorComponent } from './admin/components/review-editor/review-e
 import { DateFormatPipe } from './pipes/date-format.pipe';
 import { ToParagraphPipe } from './pipes/to-paragraph.pipe';
 import { ReviewPreviewComponent } from './admin/components/review-preview/review-preview.component';
+import { FullDatePipe } from './pipes/full-date.pipe';
+import { ShortenDatePipe } from './pipes/shorten-date.pipe';
 
 const appRoutes: Routes = [
   {
@@ -104,7 +106,9 @@ const appRoutes: Routes = [
     ReviewEditorComponent,
     DateFormatPipe,
     ToParagraphPipe,
-    ReviewPreviewComponent
+    ReviewPreviewComponent,
+    FullDatePipe,
+    ShortenDatePipe
   ],
   imports: [
     BrowserModule,

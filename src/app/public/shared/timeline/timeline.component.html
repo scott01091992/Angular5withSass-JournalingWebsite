@@ -9,7 +9,10 @@
       <div class='date-row'>
         <div class='timeline-grid'></div>
         <div class='timeline-grid' *ngFor="let data of timeline">
-          <span class='timeline-date'>{{data.date}}</span>
+          <span class='timeline-date'>
+            <span class='fullDate'>{{data.date | fullDate}}</span>
+            <span class='shortDate'>{{data.date | shortenDate}}</span>
+          </span>
         </div>
       </div>
     </div>
